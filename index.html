@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gokul Arunachalam — Automotive Embedded Software Architect</title>
+  <meta name="description" content="Portfolio of Gokul Arunachalam — Technical Lead specializing in EV embedded software architecture for motor controllers, BMS, and connectivity ECUs." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- ===================== NAVIGATION ===================== -->
+  <nav id="navbar" class="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>GA<span class="logo-slash">/</span><span class="logo-bracket">&gt;</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#articles">Articles</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===================== HERO ===================== -->
+  <section id="hero" class="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-particles" id="particles"></div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Technical Lead — Embedded Software
+      </div>
+      <h1 class="hero-title">
+        <span class="hero-greeting">Hello, I'm</span>
+        <span class="hero-name">Gokul Arunachalam</span>
+      </h1>
+      <p class="hero-subtitle">
+        Architecting <span class="text-gradient">Reusable &amp; Scalable</span> Embedded Software
+        <br />for Next-Generation <span class="text-gradient">Electric Vehicles</span>
+      </p>
+      <p class="hero-description">
+        10+ years crafting production-grade motor controllers, battery management systems,
+        and middleware platforms that power the future of sustainable mobility.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">
+          <span>View Projects</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-outline">
+          <span>Get in Touch</span>
+        </a>
+        <a href="https://github.com/binarymaker" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          <span>GitHub</span>
+        </a>
+        <a href="assets/Resume_gokul.pdf" download="Gokul_Arunachalam_Resume.pdf" class="btn btn-download">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span>Download Resume</span>
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number" data-target="10">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-target="5">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">EV Products Shipped</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-target="100">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Research Prototypes</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number" data-target="15">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Reusable SW Modules</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll to explore</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section id="about" class="section about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// ABOUT ME</span>
+        <h2 class="section-title">Driving Innovation in <span class="text-gradient">EV Software</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="about-lead">
+            Versatile R&amp;D professional with <strong>10+ years</strong> of experience in conceptualization and
+            development of microcontroller-based products and solutions for the <strong>electric vehicle</strong> ecosystem.
+          </p>
+          <p>
+            I specialize in designing <strong>modular, reusable software architectures</strong> that enable businesses
+            to scale faster, reduce time-to-market, and maintain exceptional quality across product lines.
+            My approach focuses on building robust platform software that serves as the foundation for
+            motor controllers, battery management systems, and connectivity ECUs.
+          </p>
+          <p>
+            From low-level device drivers to complete middleware stacks, from AUTOSAR integration to
+            custom BSW development — I architect software that is <strong>portable across platforms</strong>,
+            <strong>tested rigorously</strong>, and <strong>built to last</strong>.
+          </p>
+          <div class="about-highlights">
+            <div class="highlight">
+              <div class="highlight-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              </div>
+              <div>
+                <h4>Architecture First</h4>
+                <p>Modular designs with clean interfaces enabling reuse across 2W/3W EV platforms</p>
+              </div>
+            </div>
+            <div class="highlight">
+              <div class="highlight-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div>
+                <h4>Quality Driven</h4>
+                <p>MISRA compliant, unit-tested, and verified through automated CI/CD pipelines</p>
+              </div>
+            </div>
+            <div class="highlight">
+              <div class="highlight-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              </div>
+              <div>
+                <h4>Full Stack Embedded</h4>
+                <p>From BSP &amp; drivers through middleware to application — end-to-end ownership</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual">
+          <div class="code-window">
+            <div class="code-header">
+              <span class="code-dot red"></span>
+              <span class="code-dot yellow"></span>
+              <span class="code-dot green"></span>
+              <span class="code-title">sw_architecture.h</span>
+            </div>
+            <pre class="code-body"><code><span class="kw">#ifndef</span> <span class="def">SW_ARCHITECTURE_H</span>
+<span class="kw">#define</span> <span class="def">SW_ARCHITECTURE_H</span>
+
+<span class="cm">/* ── Layered Architecture ── */</span>
+<span class="kw">typedef enum</span> {
+  <span class="def">LAYER_BSP</span>,        <span class="cm">/* Board Support   */</span>
+  <span class="def">LAYER_MCAL</span>,       <span class="cm">/* uC Abstraction  */</span>
+  <span class="def">LAYER_ECU_AL</span>,     <span class="cm">/* ECU Abstraction  */</span>
+  <span class="def">LAYER_SERVICES</span>,   <span class="cm">/* Middleware Stack */</span>
+  <span class="def">LAYER_APPLICATION</span> <span class="cm">/* App Software     */</span>
+} <span class="tp">SwLayer_t</span>;
+
+<span class="cm">/* ── Reusable Module Config ── */</span>
+<span class="kw">typedef struct</span> {
+  <span class="tp">SwLayer_t</span>    layer;
+  <span class="tp">const char</span>  *name;
+  <span class="tp">Version_t</span>    version;
+  <span class="tp">bool</span>         portable;  <span class="cm">/* TRUE */</span>
+  <span class="tp">bool</span>         tested;    <span class="cm">/* TRUE */</span>
+} <span class="tp">SwModule_t</span>;
+
+<span class="kw">#endif</span></code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EXPERTISE DOMAINS ===================== -->
+  <section id="expertise" class="section expertise">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// DOMAIN EXPERTISE</span>
+        <h2 class="section-title">EV Component <span class="text-gradient">Software Domains</span></h2>
+        <p class="section-desc">End-to-end embedded software development across the core EV powertrain and electronics ecosystem</p>
+      </div>
+      <div class="expertise-grid">
+        <!-- Motor Controller -->
+        <div class="expertise-card" data-aos="fade-up">
+          <div class="card-glow"></div>
+          <div class="card-icon motor">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/>
+              <path d="M12 2v4M12 18v4M2 12h4M18 12h4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
+            </svg>
+          </div>
+          <h3>Motor Controller (DCU)</h3>
+          <p class="card-subtitle">Traction Inverter — 2W/3W EV</p>
+          <ul class="card-features">
+            <li>FOC &amp; MTPA algorithms</li>
+            <li>BLDC, PMSM &amp; Induction motor</li>
+            <li>Flux weakening &amp; regen braking</li>
+            <li>Six-step commutation</li>
+            <li>Fixed-point arithmetic DSP</li>
+            <li>Smart gate driver integration</li>
+          </ul>
+          <div class="card-tag">ASIL-C Compliant</div>
+        </div>
+
+        <!-- BMS -->
+        <div class="expertise-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="card-glow"></div>
+          <div class="card-icon bms">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="6" width="18" height="12" rx="2"/><path d="M22 10v4"/><path d="M6 10v4M10 10v4M14 10v4"/>
+            </svg>
+          </div>
+          <h3>Battery Management System</h3>
+          <p class="card-subtitle">BMS — NMC &amp; LFP Chemistry</p>
+          <ul class="card-features">
+            <li>SOC &amp; SOH estimation</li>
+            <li>Cell balancing algorithms</li>
+            <li>Thermal management</li>
+            <li>Fault detection &amp; diagnostics</li>
+            <li>Distance-to-empty estimation</li>
+            <li>BMS ASIC driver integration</li>
+          </ul>
+          <div class="card-tag">Safety Critical</div>
+        </div>
+
+        <!-- Connectivity ECU -->
+        <div class="expertise-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="card-glow"></div>
+          <div class="card-icon ecu">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </div>
+          <h3>Connectivity ECU (MFECU)</h3>
+          <p class="card-subtitle">Multifunction Electronic Control Unit</p>
+          <ul class="card-features">
+            <li>CAN/FD network management</li>
+            <li>UDS diagnostic services</li>
+            <li>OTA firmware updates</li>
+            <li>Telematics integration</li>
+            <li>J1939 protocol stack</li>
+            <li>Gateway functionality</li>
+          </ul>
+          <div class="card-tag">Connected Vehicle</div>
+        </div>
+
+        <!-- Onboard Charger -->
+        <div class="expertise-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="card-glow"></div>
+          <div class="card-icon charger">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+          </div>
+          <h3>Onboard Charger (OBC)</h3>
+          <p class="card-subtitle">AC-DC Power Conversion</p>
+          <ul class="card-features">
+            <li>Platform SW integration</li>
+            <li>Charging state machine</li>
+            <li>Safety interlock management</li>
+            <li>Diagnostic stack integration</li>
+            <li>Communication protocols</li>
+            <li>Boot-loader support</li>
+          </ul>
+          <div class="card-tag">Power Electronics</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ARCHITECTURE PHILOSOPHY ===================== -->
+  <section id="architecture" class="section architecture">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// SOFTWARE ARCHITECTURE</span>
+        <h2 class="section-title">Reusable Platform <span class="text-gradient">Architecture</span></h2>
+        <p class="section-desc">Building modular middleware that scales across product lines — write once, deploy everywhere</p>
+      </div>
+      <div class="arch-visual">
+        <div class="arch-layer" data-layer="app">
+          <div class="layer-label">Application Layer</div>
+          <div class="layer-modules">
+            <span class="module app">Motor Control</span>
+            <span class="module app">BMS Logic</span>
+            <span class="module app">Charger Control</span>
+            <span class="module app">Vehicle Mode</span>
+          </div>
+        </div>
+        <div class="arch-connector">
+          <div class="connector-line"></div>
+          <span class="connector-label">Standardized API Interface</span>
+        </div>
+        <div class="arch-layer" data-layer="service">
+          <div class="layer-label">Service / Middleware Layer <span class="reusable-badge">REUSABLE</span></div>
+          <div class="layer-modules">
+            <span class="module svc">Diag Stack (UDS)</span>
+            <span class="module svc">Comm Stack (CAN TP)</span>
+            <span class="module svc">NVM Manager</span>
+            <span class="module svc">OS / Scheduler</span>
+            <span class="module svc">DTC / FCM</span>
+            <span class="module svc">Safety Monitor</span>
+            <span class="module svc">DSP Library</span>
+            <span class="module svc">CRC Stack</span>
+          </div>
+        </div>
+        <div class="arch-connector">
+          <div class="connector-line"></div>
+          <span class="connector-label">Hardware Abstraction Interface</span>
+        </div>
+        <div class="arch-layer" data-layer="driver">
+          <div class="layer-label">ECU Abstraction / Driver Layer</div>
+          <div class="layer-modules">
+            <span class="module drv">IO Abstraction</span>
+            <span class="module drv">ADC Driver</span>
+            <span class="module drv">PWM Driver</span>
+            <span class="module drv">SPI / I2C</span>
+            <span class="module drv">CAN Driver</span>
+            <span class="module drv">Flash / EEPROM</span>
+            <span class="module drv">Thermistor</span>
+            <span class="module drv">Hall Sensor</span>
+          </div>
+        </div>
+        <div class="arch-connector">
+          <div class="connector-line"></div>
+          <span class="connector-label">MCAL / BSP Interface</span>
+        </div>
+        <div class="arch-layer" data-layer="hw">
+          <div class="layer-label">Hardware / Microcontroller</div>
+          <div class="layer-modules">
+            <span class="module hw">Renesas RH850</span>
+            <span class="module hw">STM32</span>
+            <span class="module hw">dsPIC33</span>
+            <span class="module hw">Infineon XMC</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="arch-principles">
+        <h3>Architecture Principles</h3>
+        <div class="principles-grid">
+          <div class="principle">
+            <div class="principle-num">01</div>
+            <h4>Layered Isolation</h4>
+            <p>Strict separation between application, services, and drivers ensures changes in one layer don't cascade through the system.</p>
+          </div>
+          <div class="principle">
+            <div class="principle-num">02</div>
+            <h4>Platform Portability</h4>
+            <p>Abstract hardware dependencies behind clean interfaces. Migrate to new MCUs by swapping only the driver layer.</p>
+          </div>
+          <div class="principle">
+            <div class="principle-num">03</div>
+            <h4>Git Sub-Module Strategy</h4>
+            <p>Each reusable module lives in its own repository. Products compose modules via Git sub-modules for rapid integration.</p>
+          </div>
+          <div class="principle">
+            <div class="principle-num">04</div>
+            <h4>Quality Gates</h4>
+            <p>Every module passes MISRA static analysis, unit testing with coverage, and automated CI/CD before release.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROJECTS ===================== -->
+  <section id="projects" class="section projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// PROJECTS</span>
+        <h2 class="section-title">Featured <span class="text-gradient">Projects</span></h2>
+        <p class="section-desc">Key projects demonstrating architectural vision and production-grade embedded software delivery</p>
+      </div>
+      <div class="projects-grid">
+        <!-- Platform Project -->
+        <div class="project-card featured">
+          <div class="project-badge">Platform Project</div>
+          <h3>BSW Middleware Software Stacks</h3>
+          <p class="project-category">Automotive — Common Platform for 2W/3W EV Products</p>
+          <p class="project-desc">
+            Designed and developed a complete reusable middleware platform serving as the foundation
+            for all 2W/3W products — motor controllers, BMS, connectivity ECUs, and onboard chargers.
+          </p>
+          <div class="project-deliverables">
+            <h4>Key Deliverables</h4>
+            <div class="deliverable-grid">
+              <div class="deliverable">
+                <span class="deliverable-icon">&#9881;</span>
+                <span>OS — Scheduler, HSM framework, timers, queues</span>
+              </div>
+              <div class="deliverable">
+                <span class="deliverable-icon">&#9881;</span>
+                <span>CAN TP Stack + DBC-to-config generator tool</span>
+              </div>
+              <div class="deliverable">
+                <span class="deliverable-icon">&#9881;</span>
+                <span>UDS Diagnostic Stack — Client &amp; Server</span>
+              </div>
+              <div class="deliverable">
+                <span class="deliverable-icon">&#9881;</span>
+                <span>DTC / Fault Code Memory Manager</span>
+              </div>
+              <div class="deliverable">
+                <span class="deliverable-icon">&#9881;</span>
+                <span>NVM Manager — Flash, EEPROM emulation</span>
+              </div>
+              <div class="deliverable">
+                <span class="deliverable-icon">&#9881;</span>
+                <span>Safety — RAM test, ROM CRC, Watchdog manager</span>
+              </div>
+              <div class="deliverable">
+                <span class="deliverable-icon">&#9881;</span>
+                <span>DSP Library — Filters, IIR, hysteresis, calculus</span>
+              </div>
+              <div class="deliverable">
+                <span class="deliverable-icon">&#9881;</span>
+                <span>Fail-safe Bootloader + Updater</span>
+              </div>
+              <div class="deliverable">
+                <span class="deliverable-icon">&#9881;</span>
+                <span>IO Abstraction — Digital &amp; Analog with filtering</span>
+              </div>
+              <div class="deliverable">
+                <span class="deliverable-icon">&#9881;</span>
+                <span>Python UDS Client GUI Tool</span>
+              </div>
+              <div class="deliverable">
+                <span class="deliverable-icon">&#9881;</span>
+                <span>Automated unit testing &amp; static test pipelines</span>
+              </div>
+              <div class="deliverable">
+                <span class="deliverable-icon">&#9881;</span>
+                <span>Git sub-module organization for rapid deployment</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-impact">
+            <span class="impact-label">Impact:</span>
+            Enabled 4+ product lines to share a battle-tested middleware stack, drastically reducing
+            development time and increasing software quality through centralized bug fixes.
+          </div>
+        </div>
+
+        <!-- Motor Controller L1 -->
+        <div class="project-card">
+          <div class="project-badge">Product</div>
+          <h3>2W Traction Motor Controller — L1</h3>
+          <p class="project-category">Automotive L1 Category — Electric Two-Wheeler</p>
+          <p class="project-desc">
+            Full software development for a two-wheeler traction motor controller from system requirements
+            to production release.
+          </p>
+          <ul class="project-tags">
+            <li>FOC Algorithm</li>
+            <li>Fixed-Point DSP</li>
+            <li>Drive Mode SM</li>
+            <li>Throttle Map</li>
+            <li>Calibration Tool GUI</li>
+            <li>MISRA Compliant</li>
+          </ul>
+        </div>
+
+        <!-- Motor Controller L2 -->
+        <div class="project-card">
+          <div class="project-badge asil">ASIL-C</div>
+          <h3>2W Traction Motor Controller — L2</h3>
+          <p class="project-category">Automotive L2 Category — ASIL-C Safety</p>
+          <p class="project-desc">
+            Safety-critical motor controller with functional safety compliance. Smart inverter gate
+            driver integration and built-in self-test drivers.
+          </p>
+          <ul class="project-tags">
+            <li>TI DRV32XX</li>
+            <li>BIST Drivers</li>
+            <li>BSW Integration</li>
+            <li>ADC/PWM/RAM/ROM Tests</li>
+            <li>ISO 26262</li>
+          </ul>
+        </div>
+
+        <!-- Suspension Controller -->
+        <div class="project-card">
+          <div class="project-badge asil">ASIL-B</div>
+          <h3>Suspension Air Compressor Controller</h3>
+          <p class="project-category">Hybrid Vehicle — Functional Safety</p>
+          <p class="project-desc">
+            Software architecture and bootloader development for a hybrid vehicle's suspension
+            air compressor motor controller with full ISO 26262 safety framework.
+          </p>
+          <ul class="project-tags">
+            <li>SW Architecture</li>
+            <li>UDS Bootloader</li>
+            <li>Board Bring-up</li>
+            <li>ISO 26262</li>
+            <li>Peer Review</li>
+          </ul>
+        </div>
+
+        <!-- IoT -->
+        <div class="project-card">
+          <div class="project-badge">IoT</div>
+          <h3>Smart Refrigerator System</h3>
+          <p class="project-category">IoT — Connected Appliance</p>
+          <p class="project-desc">
+            Automatic defrost system with energy monitoring, smartphone temperature control,
+            and OTA firmware update capability.
+          </p>
+          <ul class="project-tags">
+            <li>OTA Updates</li>
+            <li>Custom Bootloader</li>
+            <li>BSP Development</li>
+            <li>Energy Monitor</li>
+          </ul>
+        </div>
+
+        <!-- Research -->
+        <div class="project-card">
+          <div class="project-badge">Research</div>
+          <h3>100+ Research Prototypes</h3>
+          <p class="project-category">Diverse Embedded Domains</p>
+          <p class="project-desc">
+            Extensive research portfolio spanning evaluation boards, BSPs, MATLAB, Python,
+            Raspberry Pi, OpenCV, and cost-effective agriculture &amp; industrial solutions.
+          </p>
+          <ul class="project-tags">
+            <li>MATLAB</li>
+            <li>Python</li>
+            <li>Raspberry Pi</li>
+            <li>OpenCV</li>
+            <li>VLSI</li>
+            <li>Agriculture</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EXPERIENCE ===================== -->
+  <section id="experience" class="section experience-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// CAREER</span>
+        <h2 class="section-title">Professional <span class="text-gradient">Journey</span></h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-marker current"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">April 2022 — Present</div>
+            <h3>Technical Lead</h3>
+            <p class="timeline-company">FORVIA HELLA eMobionics Pvt Ltd, Pune</p>
+            <p>Leading embedded software development for 2W/3W EV products. Architecting platform middleware stacks, driving coding standards, and building reusable software infrastructure.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">July 2021 — April 2022</div>
+            <h3>Technical Specialist</h3>
+            <p class="timeline-company">Elektrobit India Pvt Ltd, Bangalore</p>
+            <p>AUTOSAR BSW integration and configuration. ComStack, DiagStack, MemStack, ComplexDriver and MCAL migration for automotive ECU projects.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">April 2018 — June 2021</div>
+            <h3>Software Development Engineer</h3>
+            <p class="timeline-company">Lucas TVS Ltd, Chennai</p>
+            <p>Motor controller and IoT product development. Microcontroller peripheral drivers, application software, and bootloader development.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">September 2016 — March 2018</div>
+            <h3>Engineer</h3>
+            <p class="timeline-company">ELGI Ultra Industries Ltd, Coimbatore</p>
+            <p>Embedded product development and research prototyping across diverse domains.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-date">June 2014 — August 2016</div>
+            <h3>FPGA and Embedded Programmer</h3>
+            <p class="timeline-company">Crisp System India Pvt Ltd, Coimbatore</p>
+            <p>FPGA development and embedded programming. Foundation in hardware-software co-design.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SKILLS ===================== -->
+  <section id="skills" class="section skills-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// TECHNICAL STACK</span>
+        <h2 class="section-title">Skills &amp; <span class="text-gradient">Competencies</span></h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3><span class="cat-icon">&#x2699;</span> Microcontrollers</h3>
+          <div class="skill-tags">
+            <span>Renesas RH850</span><span>Renesas RL78</span><span>STM32 (M0+, M3)</span>
+            <span>dsPIC33EV</span><span>Infineon XMC1400</span><span>PIC 16F/18F</span>
+            <span>Xilinx Spartan 3E</span><span>ARM7 LPC2148</span><span>Arduino</span><span>Raspberry Pi</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3><span class="cat-icon">&#x1F4BB;</span> Languages</h3>
+          <div class="skill-tags">
+            <span class="primary">Embedded C</span><span class="primary">C/C++</span>
+            <span class="primary">Python</span><span>Assembly</span><span>HDL</span>
+            <span>Markdown</span><span>XML / YAML / JSON</span><span>Shell Script</span><span>Makefile</span><span>MATLAB</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3><span class="cat-icon">&#x1F50C;</span> Protocols</h3>
+          <div class="skill-tags">
+            <span class="primary">CAN / CAN FD</span><span class="primary">J1939</span>
+            <span class="primary">UDS (ISO 14229)</span><span class="primary">ISO TP (ISO 15765)</span>
+            <span>OBD-2</span><span>SPI</span><span>I2C / SMBus</span><span>UART</span><span>Modbus</span><span>1-Wire</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3><span class="cat-icon">&#x1F3D7;</span> Architecture &amp; Standards</h3>
+          <div class="skill-tags">
+            <span class="primary">AUTOSAR</span><span class="primary">ISO 26262</span>
+            <span class="primary">ASPICE</span><span>V-Model SDLC</span>
+            <span>SOLID Principles</span><span>Design Patterns</span><span>PlantUML</span><span>ANSYS SCADE</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3><span class="cat-icon">&#x1F9EA;</span> Testing &amp; Quality</h3>
+          <div class="skill-tags">
+            <span class="primary">MISRA-2012</span><span class="primary">Unity / Ceedling</span>
+            <span>Helix QAC</span><span>PC-lint</span><span>CMock</span><span>Robot Framework</span>
+            <span>Code Coverage</span><span>Cyclomatic Complexity</span><span>Static Stack Analysis</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3><span class="cat-icon">&#x1F680;</span> DevOps &amp; Tools</h3>
+          <div class="skill-tags">
+            <span class="primary">Git</span><span class="primary">GitLab CI/CD</span>
+            <span>Docker</span><span>Travis-CI</span><span>Doxygen</span>
+            <span>Jira</span><span>IBM DOORS</span><span>SVN</span>
+            <span>GitHub Copilot</span><span>Qt Designer</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3><span class="cat-icon">&#x1F50D;</span> Debug &amp; Simulation</h3>
+          <div class="skill-tags">
+            <span>Lauterbach TRACE32</span><span>iSystem winIDEA</span><span>GDB / OpenOCD</span>
+            <span>Renesas E1/E20</span><span>LT Spice</span><span>Proteus</span><span>Oscilloscope</span><span>Logic Analyzer</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== EDUCATION ===================== -->
+  <section id="education" class="section education-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// EDUCATION &amp; TRAINING</span>
+        <h2 class="section-title">Qualifications &amp; <span class="text-gradient">Certifications</span></h2>
+      </div>
+      <div class="edu-grid">
+        <div class="edu-card degree">
+          <div class="edu-icon">&#x1F393;</div>
+          <h3>B.E. — Electronics &amp; Communication</h3>
+          <p class="edu-inst">Maharaja Engineering College, Avinashi</p>
+          <p class="edu-detail">First Class — 72% | 2014</p>
+        </div>
+        <div class="edu-card degree">
+          <div class="edu-icon">&#x1F393;</div>
+          <h3>Diploma — Electronics &amp; Communication</h3>
+          <p class="edu-inst">Ruthraveni Muthuswamy Polytechnic College</p>
+          <p class="edu-detail">First Class — 89% | 2011</p>
+        </div>
+      </div>
+      <h3 class="training-heading">Professional Training &amp; Certifications</h3>
+      <div class="training-grid">
+        <div class="training-item">
+          <span class="training-badge">C-DAC</span>
+          <span>Embedded System and Design</span>
+        </div>
+        <div class="training-item">
+          <span class="training-badge cert">TÜV SÜD</span>
+          <span>Functional Safety — ISO 26262</span>
+        </div>
+        <div class="training-item">
+          <span class="training-badge">pManifold</span>
+          <span>EV Systems and Modeling</span>
+        </div>
+        <div class="training-item">
+          <span class="training-badge">NPTEL</span>
+          <span>Fundamentals of Electric Vehicles</span>
+        </div>
+        <div class="training-item">
+          <span class="training-badge">TI Online</span>
+          <span>Teaching Old Motors New Tricks</span>
+        </div>
+        <div class="training-item">
+          <span class="training-badge">Udemy</span>
+          <span>RTOS, Bootloader, BMS, Clean Code, CI/CD &amp; more</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ARTICLES ===================== -->
+  <section id="articles" class="section articles-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// THOUGHT LEADERSHIP</span>
+        <h2 class="section-title">Technical <span class="text-gradient">Articles</span></h2>
+      </div>
+      <div class="articles-grid">
+        <article class="article-card">
+          <div class="article-number">01</div>
+          <h3>Balancing the Triad: Diversifying Your Embedded Development Team</h3>
+          <p>Exploring the importance of diversified skill sets in embedded teams for building robust EV software.</p>
+          <span class="article-tag">Team Leadership</span>
+        </article>
+        <article class="article-card">
+          <div class="article-number">02</div>
+          <h3>From Skeptic to Advocate: My Journey with Unit Testing in Embedded</h3>
+          <p>How adopting TDD transformed code quality and confidence in safety-critical automotive software.</p>
+          <span class="article-tag">Testing</span>
+        </article>
+        <article class="article-card">
+          <div class="article-number">03</div>
+          <h3>Unit Testing: Developer's Friend for Refactoring Code</h3>
+          <p>Practical insights on using unit tests as a safety net when refactoring embedded legacy codebases.</p>
+          <span class="article-tag">Refactoring</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">// CONTACT</span>
+        <h2 class="section-title">Let's <span class="text-gradient">Connect</span></h2>
+        <p class="section-desc">Interested in discussing EV software architecture, reusable platforms, or collaboration opportunities?</p>
+      </div>
+      <div class="resume-download-banner">
+        <div class="download-content">
+          <div class="download-icon-wrap">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <div>
+            <h3>Download My Resume</h3>
+            <p>Get the complete PDF with full project details, certifications, and technical competency breakdown.</p>
+          </div>
+          <a href="assets/Resume_gokul.pdf" download="Gokul_Arunachalam_Resume.pdf" class="btn btn-primary btn-download-lg">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span>Download PDF</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-grid">
+        <a href="mailto:importfunfromcode@gmail.com" class="contact-card">
+          <div class="contact-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+          </div>
+          <h3>Email</h3>
+          <p>importfunfromcode@gmail.com</p>
+        </a>
+        <a href="tel:+918883262288" class="contact-card">
+          <div class="contact-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <h3>Phone</h3>
+          <p>+91 888 326 2288</p>
+        </a>
+        <a href="https://github.com/binarymaker" target="_blank" rel="noopener noreferrer" class="contact-card">
+          <div class="contact-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </div>
+          <h3>GitHub</h3>
+          <p>github.com/binarymaker</p>
+        </a>
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3>Location</h3>
+          <p>Pune, Maharashtra, India</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-bracket">&lt;</span>GA<span class="logo-slash">/</span><span class="logo-bracket">&gt;</span>
+        </div>
+        <p>&copy; 2026 Gokul Arunachalam. Architecting the future of EV software.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
