@@ -107,14 +107,20 @@ img {
 }
 
 .section-tag {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-family: var(--font-mono);
-  font-size: 0.8rem;
-  font-weight: 500;
+  font-size: 0.78rem;
+  font-weight: 600;
   color: var(--accent);
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   text-transform: uppercase;
   margin-bottom: 16px;
+  padding: 6px 16px 6px 14px;
+  background: var(--accent-glow);
+  border: 1px solid rgba(0, 212, 255, 0.12);
+  border-radius: 50px;
 }
 
 .section-title {
