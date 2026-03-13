@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gokul Arunachalam - Automotive Embedded Software Architect</title>
-  <meta name="description" content="Portfolio of Gokul Arunachalam - Technical Lead specializing in EV embedded software architecture for motor controllers, BMS, and connectivity ECUs." />
+  <title>Gokul Arunachalam — Automotive Embedded Software Architect</title>
+  <meta name="description" content="Portfolio of Gokul Arunachalam — Technical Lead specializing in EV embedded software architecture for motor controllers, BMS, and connectivity ECUs." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -40,7 +40,7 @@
     <div class="hero-content">
       <div class="hero-badge">
         <span class="badge-dot"></span>
-        Technical Lead - Embedded Software
+        Technical Lead — Embedded Software
       </div>
       <h1 class="hero-title">
         <span class="hero-greeting">Hello, I'm</span>
@@ -117,7 +117,7 @@
           </p>
           <p>
             From low-level device drivers to complete middleware stacks, from AUTOSAR integration to
-            custom BSW development - I architect software that is <strong>portable across platforms</strong>,
+            custom BSW development — I architect software that is <strong>portable across platforms</strong>,
             <strong>tested rigorously</strong>, and <strong>built to last</strong>.
           </p>
           <div class="about-highlights">
@@ -145,7 +145,7 @@
               </div>
               <div>
                 <h4>Full Stack Embedded</h4>
-                <p>From BSP &amp; drivers through middleware to application - end-to-end ownership</p>
+                <p>From BSP &amp; drivers through middleware to application — end-to-end ownership</p>
               </div>
             </div>
           </div>
@@ -173,7 +173,7 @@
             </svg>
           </div>
           <h3>Motor Controller (DCU)</h3>
-          <p class="card-subtitle">Traction Inverter - 2W/3W EV</p>
+          <p class="card-subtitle">Traction Inverter — 2W/3W EV</p>
           <ul class="card-features">
             <li>FOC &amp; MTPA algorithms</li>
             <li>BLDC, PMSM &amp; Induction motor</li>
@@ -215,7 +215,7 @@
             </svg>
           </div>
           <h3>Battery Management System</h3>
-          <p class="card-subtitle">BMS - NMC &amp; LFP Chemistry</p>
+          <p class="card-subtitle">BMS — NMC &amp; LFP Chemistry</p>
           <ul class="card-features">
             <li>SOC &amp; SOH estimation</li>
             <li>Cell balancing algorithms</li>
@@ -258,7 +258,7 @@
       <div class="section-header">
         <span class="section-tag">// SOFTWARE ARCHITECTURE</span>
         <h2 class="section-title">Reusable Platform <span class="text-gradient">Architecture</span></h2>
-        <p class="section-desc">Building modular middleware that scales across product lines - write once, deploy everywhere</p>
+        <p class="section-desc">Building modular middleware that scales across product lines — write once, deploy everywhere</p>
       </div>
       <div class="arch-visual">
         <div class="arch-layer" data-layer="app">
@@ -283,7 +283,6 @@
               <div class="sublayer-col">
                 <div class="sublayer-heading svc">Motor Controller</div>
                 <div class="layer-modules">
-                  <span class="module proj">FOC Transforms</span>
                   <span class="module proj">FOC Control</span>
                   <span class="module proj">Flux Weakening</span>
                   <span class="module proj">MTPA</span>
@@ -323,11 +322,12 @@
 
           <!-- Control System Block -->
           <div class="arch-sublayer">
-            <div class="sublayer-label">Control System Block</div>
+            <div class="sublayer-label">Control System</div>
             <div class="layer-modules">
               <span class="module svc">Algebra</span>
               <span class="module svc">PID Controller</span>
               <span class="module svc">DSP Functions</span>
+              <span class="module svc">Transforms</span>
               <span class="module svc">Digital Filters</span>
             </div>
           </div>
@@ -403,21 +403,21 @@
           <div class="principle">
             <div class="principle-num">02</div>
             <h4>Platform Portability</h4>
-            <p>Abstract hardware dependencies behind clean interfaces. Migrate to new MCUs by swapping only the driver layer.</p>
+            <p>Abstract hardware dependencies behind clean interfaces. Migrate to new MCUs by swapping only the BSP layer.</p>
           </div>
           <div class="principle">
             <div class="principle-num">03</div>
             <h4>Git Sub-Module Strategy</h4>
-            <p>Each reusable module lives in its own repository. Products compose modules via Git sub-modules for rapid integration - sharing updates across projects and modules becomes seamless.</p>
+            <p>Each reusable module lives in its own repository. Products compose modules via Git sub-modules for rapid integration — sharing updates across projects and modules becomes seamless.</p>
           </div>
           <div class="principle">
             <div class="principle-num">04</div>
             <h4>Dual Target Strategy</h4>
-            <p>Middleware and application software are developed and tested on both PC (host) and MCU (target) simultaneously - guaranteeing zero hardware dependency and seamless portability to new microcontrollers.</p>
+            <p>Middleware and application software are developed and tested on both PC (host) and MCU (target) simultaneously — guaranteeing zero hardware dependency and seamless portability to new microcontrollers.</p>
           </div>
           <div class="principle">
             <div class="principle-num">05</div>
-            <h4>OOP in C - Emulated</h4>
+            <h4>OOP in C — Emulated</h4>
             <p>Object-oriented patterns emulated in C enable scalability, polymorphism, and test flexibility. All modules support multiple instances and concurrent operation.</p>
           </div>
           <div class="principle">
@@ -453,17 +453,17 @@
         <div class="project-card featured">
           <div class="project-badge">Platform Project</div>
           <h3>BSW Middleware Software Stacks</h3>
-          <p class="project-category">Automotive - Common Platform for 2W/3W EV Products</p>
+          <p class="project-category">Automotive — Common Platform for 2W/3W EV Products</p>
           <p class="project-desc">
             Designed and developed a complete reusable middleware platform serving as the foundation
-            for all 2W/3W products - motor controllers, BMS, connectivity ECUs, and onboard chargers.
+            for all 2W/3W products — motor controllers, BMS, connectivity ECUs, and onboard chargers.
           </p>
           <div class="project-deliverables">
             <h4>Key Deliverables</h4>
             <div class="deliverable-grid">
               <div class="deliverable">
                 <span class="deliverable-icon">&#9881;</span>
-                <span>OS - Scheduler, HSM framework, timers, queues</span>
+                <span>OS — Scheduler, HSM framework, timers, queues</span>
               </div>
               <div class="deliverable">
                 <span class="deliverable-icon">&#9881;</span>
@@ -471,7 +471,7 @@
               </div>
               <div class="deliverable">
                 <span class="deliverable-icon">&#9881;</span>
-                <span>UDS Diagnostic Stack - Client &amp; Server</span>
+                <span>UDS Diagnostic Stack — Client &amp; Server</span>
               </div>
               <div class="deliverable">
                 <span class="deliverable-icon">&#9881;</span>
@@ -479,15 +479,15 @@
               </div>
               <div class="deliverable">
                 <span class="deliverable-icon">&#9881;</span>
-                <span>NVM Manager - Flash, EEPROM emulation</span>
+                <span>NVM Manager — Flash, EEPROM emulation</span>
               </div>
               <div class="deliverable">
                 <span class="deliverable-icon">&#9881;</span>
-                <span>Safety - RAM test, ROM CRC, Watchdog manager</span>
+                <span>Safety — RAM test, ROM CRC, Watchdog manager</span>
               </div>
               <div class="deliverable">
                 <span class="deliverable-icon">&#9881;</span>
-                <span>DSP Library - Filters, IIR, hysteresis, calculus</span>
+                <span>DSP Library — Filters, IIR, hysteresis, calculus</span>
               </div>
               <div class="deliverable">
                 <span class="deliverable-icon">&#9881;</span>
@@ -495,7 +495,7 @@
               </div>
               <div class="deliverable">
                 <span class="deliverable-icon">&#9881;</span>
-                <span>IO Abstraction - Digital &amp; Analog with filtering</span>
+                <span>IO Abstraction — Digital &amp; Analog with filtering</span>
               </div>
               <div class="deliverable">
                 <span class="deliverable-icon">&#9881;</span>
@@ -521,8 +521,8 @@
         <!-- Motor Controller L1 -->
         <div class="project-card">
           <div class="project-badge">Product</div>
-          <h3>2W Traction Motor Controller - L1</h3>
-          <p class="project-category">Automotive L1 Category - Electric Two-Wheeler</p>
+          <h3>2W Traction Motor Controller — L1</h3>
+          <p class="project-category">Automotive L1 Category — Electric Two-Wheeler</p>
           <p class="project-desc">
             Full software development for a two-wheeler traction motor controller from system requirements
             to production release.
@@ -540,8 +540,8 @@
         <!-- Motor Controller L2 -->
         <div class="project-card">
           <div class="project-badge asil">ASIL-C</div>
-          <h3>2W Traction Motor Controller - L2</h3>
-          <p class="project-category">Automotive L2 Category - ASIL-C Safety</p>
+          <h3>2W Traction Motor Controller — L2</h3>
+          <p class="project-category">Automotive L2 Category — ASIL-C Safety</p>
           <p class="project-desc">
             Safety-critical motor controller with functional safety compliance. Smart inverter gate
             driver integration and built-in self-test drivers.
@@ -559,7 +559,7 @@
         <div class="project-card">
           <div class="project-badge asil">ASIL-B</div>
           <h3>Suspension Air Compressor Controller</h3>
-          <p class="project-category">Hybrid Vehicle - Functional Safety</p>
+          <p class="project-category">Hybrid Vehicle — Functional Safety</p>
           <p class="project-desc">
             Software architecture and bootloader development for a hybrid vehicle's suspension
             air compressor motor controller with full ISO 26262 safety framework.
@@ -577,7 +577,7 @@
         <div class="project-card">
           <div class="project-badge">IoT</div>
           <h3>Smart Refrigerator System</h3>
-          <p class="project-category">IoT - Connected Appliance</p>
+          <p class="project-category">IoT — Connected Appliance</p>
           <p class="project-desc">
             Automatic defrost system with energy monitoring, smartphone temperature control,
             and OTA firmware update capability.
@@ -623,7 +623,7 @@
         <div class="timeline-item">
           <div class="timeline-marker current"></div>
           <div class="timeline-content">
-            <div class="timeline-date">April 2022 - Present</div>
+            <div class="timeline-date">April 2022 — Present</div>
             <h3>Technical Lead</h3>
             <p class="timeline-company">FORVIA HELLA eMobionics Pvt Ltd, Pune</p>
             <p>Leading embedded software development for 2W/3W EV products. Architecting platform middleware stacks, driving coding standards, and building reusable software infrastructure.</p>
@@ -632,7 +632,7 @@
         <div class="timeline-item">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <div class="timeline-date">July 2021 - April 2022</div>
+            <div class="timeline-date">July 2021 — April 2022</div>
             <h3>Technical Specialist</h3>
             <p class="timeline-company">Elektrobit India Pvt Ltd, Bangalore</p>
             <p>AUTOSAR BSW integration and configuration. ComStack, DiagStack, MemStack, ComplexDriver and MCAL migration for automotive ECU projects.</p>
@@ -641,7 +641,7 @@
         <div class="timeline-item">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <div class="timeline-date">April 2018 - June 2021</div>
+            <div class="timeline-date">April 2018 — June 2021</div>
             <h3>Software Development Engineer</h3>
             <p class="timeline-company">Lucas TVS Ltd, Chennai</p>
             <p>Motor controller and IoT product development. Microcontroller peripheral drivers, application software, and bootloader development.</p>
@@ -650,7 +650,7 @@
         <div class="timeline-item">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <div class="timeline-date">September 2016 - March 2018</div>
+            <div class="timeline-date">September 2016 — March 2018</div>
             <h3>Engineer</h3>
             <p class="timeline-company">ELGI Ultra Industries Ltd, Coimbatore</p>
             <p>Embedded product development and research prototyping across diverse domains.</p>
@@ -659,7 +659,7 @@
         <div class="timeline-item">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <div class="timeline-date">June 2014 - August 2016</div>
+            <div class="timeline-date">June 2014 — August 2016</div>
             <h3>FPGA and Embedded Programmer</h3>
             <p class="timeline-company">Crisp System India Pvt Ltd, Coimbatore</p>
             <p>FPGA development and embedded programming. Foundation in hardware-software co-design.</p>
@@ -747,15 +747,15 @@
       <div class="edu-grid">
         <div class="edu-card degree">
           <div class="edu-icon">&#x1F393;</div>
-          <h3>B.E. - Electronics &amp; Communication</h3>
+          <h3>B.E. — Electronics &amp; Communication</h3>
           <p class="edu-inst">Maharaja Engineering College, Avinashi</p>
-          <p class="edu-detail">First Class - 72% | 2014</p>
+          <p class="edu-detail">First Class — 72% | 2014</p>
         </div>
         <div class="edu-card degree">
           <div class="edu-icon">&#x1F393;</div>
-          <h3>Diploma - Electronics &amp; Communication</h3>
+          <h3>Diploma — Electronics &amp; Communication</h3>
           <p class="edu-inst">Ruthraveni Muthuswamy Polytechnic College</p>
-          <p class="edu-detail">First Class - 89% | 2011</p>
+          <p class="edu-detail">First Class — 89% | 2011</p>
         </div>
       </div>
       <h3 class="training-heading">Professional Training &amp; Certifications</h3>
@@ -766,7 +766,7 @@
         </div>
         <div class="training-item">
           <span class="training-badge cert">TÜV SÜD</span>
-          <span>Functional Safety - ISO 26262</span>
+          <span>Functional Safety — ISO 26262</span>
         </div>
         <div class="training-item">
           <span class="training-badge">pManifold</span>
