@@ -262,12 +262,11 @@
       </div>
       <div class="arch-visual">
         <div class="arch-layer" data-layer="app">
-          <div class="layer-label">Application Layer</div>
+          <div class="layer-label">Application Layer <span class="reusable-badge">Customer Logic</span></div>
           <div class="layer-modules">
             <span class="module app">Motor Control</span>
             <span class="module app">BMS Logic</span>
             <span class="module app">Charger Control</span>
-            <span class="module app">Vehicle Mode</span>
           </div>
         </div>
         <div class="arch-connector">
@@ -276,37 +275,111 @@
         </div>
         <div class="arch-layer" data-layer="service">
           <div class="layer-label">Service / Middleware Layer <span class="reusable-badge">REUSABLE</span></div>
-          <div class="layer-modules">
-            <span class="module svc">Diag Stack (UDS)</span>
-            <span class="module svc">Comm Stack (CAN TP)</span>
-            <span class="module svc">NVM Manager</span>
-            <span class="module svc">OS / Scheduler</span>
-            <span class="module svc">DTC / FCM</span>
-            <span class="module svc">Safety Monitor</span>
-            <span class="module svc">DSP Library</span>
-            <span class="module svc">CRC Stack</span>
+
+          <!-- Project Specific Modules -->
+          <div class="arch-sublayer">
+            <div class="sublayer-label">Project Specific Modules</div>
+            <div class="sublayer-group">
+              <div class="sublayer-col">
+                <div class="sublayer-heading svc">Motor Controller</div>
+                <div class="layer-modules">
+                  <span class="module proj">FOC Transforms</span>
+                  <span class="module proj">FOC Control</span>
+                  <span class="module proj">Flux Weakening</span>
+                  <span class="module proj">MTPA</span>
+                  <span class="module proj">Regen Braking</span>
+                </div>
+              </div>
+              <div class="sublayer-col">
+                <div class="sublayer-heading svc">Onboard Charger</div>
+                <div class="layer-modules">
+                  <span class="module proj">PFC</span>
+                  <span class="module proj">SOGI-PLL</span>
+                  <span class="module proj">PSFB</span>
+                  <span class="module proj">LLC</span>
+                  <span class="module proj">Sync Rectification</span>
+                  <span class="module proj">Soft Switching</span>
+                </div>
+              </div>
+              <div class="sublayer-col">
+                <div class="sublayer-heading svc">BMS</div>
+                <div class="layer-modules">
+                  <span class="module proj">Coulomb Counting</span>
+                  <span class="module proj">SOC / SOH</span>
+                  <span class="module proj">Distance-to-Empty</span>
+                  <span class="module proj">Temp Monitoring</span>
+                  <span class="module proj">Diagnostics</span>
+                </div>
+              </div>
+              <div class="sublayer-col">
+                <div class="sublayer-heading svc">MFECU</div>
+                <div class="layer-modules">
+                  <span class="module proj">CAN Manager</span>
+                  <span class="module proj">Bluetooth Stack</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Control System Block -->
+          <div class="arch-sublayer">
+            <div class="sublayer-label">Control System Block</div>
+            <div class="layer-modules">
+              <span class="module svc">Algebra</span>
+              <span class="module svc">PID Controller</span>
+              <span class="module svc">DSP Functions</span>
+              <span class="module svc">Digital Filters</span>
+            </div>
+          </div>
+
+          <!-- Device Driver -->
+          <div class="arch-sublayer">
+            <div class="sublayer-label">Device Driver</div>
+            <div class="layer-modules">
+              <span class="module svc">NTC Temperature Sensor</span>
+              <span class="module svc">ASIC Drivers</span>
+              <span class="module svc">HALL Position Sensor</span>
+              <span class="module svc">Position Angle Resolver</span>
+              <span class="module svc">External ADC</span>
+            </div>
+          </div>
+
+          <!-- Basic Software -->
+          <div class="arch-sublayer">
+            <div class="sublayer-label">Basic Software (BSW)</div>
+            <div class="layer-modules">
+              <span class="module svc">OS / Scheduler</span>
+              <span class="module svc">CAN Matrix</span>
+              <span class="module svc">IO Abstraction</span>
+              <span class="module svc">NVM Manager</span>
+              <span class="module svc">Diag Stack (UDS)</span>
+              <span class="module svc">Comm Stack (CAN TP)</span>
+              <span class="module svc">DTC / FCM</span>
+              <span class="module svc">Safety Monitor</span>
+              <span class="module svc">CRC</span>
+              <span class="module svc">Crypto AES</span>
+            </div>
           </div>
         </div>
         <div class="arch-connector">
           <div class="connector-line"></div>
-          <span class="connector-label">Hardware Abstraction Interface</span>
+          <span class="connector-label">BSP (Board Support Package)</span>
         </div>
         <div class="arch-layer" data-layer="driver">
-          <div class="layer-label">ECU Abstraction / Driver Layer</div>
+          <div class="layer-label">Microcontroller Driver Layer <span class="reusable-badge">Vendor / In-House</span></div>
           <div class="layer-modules">
-            <span class="module drv">IO Abstraction</span>
+            <span class="module drv">Clock Tree</span>
+            <span class="module drv">IO Driver</span>
             <span class="module drv">ADC Driver</span>
             <span class="module drv">PWM Driver</span>
             <span class="module drv">SPI / I2C</span>
             <span class="module drv">CAN Driver</span>
             <span class="module drv">Flash / EEPROM</span>
-            <span class="module drv">Thermistor</span>
-            <span class="module drv">Hall Sensor</span>
           </div>
         </div>
         <div class="arch-connector">
           <div class="connector-line"></div>
-          <span class="connector-label">MCAL / BSP Interface</span>
+          <span class="connector-label">Hardware Interface</span>
         </div>
         <div class="arch-layer" data-layer="hw">
           <div class="layer-label">Hardware / Microcontroller</div>
