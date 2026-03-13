@@ -484,9 +484,11 @@ img {
 /* ═══════ ABOUT ═══════ */
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 64px;
   align-items: start;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .about-lead {
@@ -507,8 +509,8 @@ img {
 }
 
 .about-highlights {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-top: 32px;
 }
@@ -1456,8 +1458,8 @@ a.contact-card:hover {
     gap: 40px;
   }
 
-  .about-visual {
-    position: static;
+  .about-highlights {
+    grid-template-columns: 1fr;
   }
 
   .hero-stats {
@@ -1469,6 +1471,10 @@ a.contact-card:hover {
 @media (max-width: 768px) {
   :root {
     --section-pad: 60px;
+  }
+
+  .about-highlights {
+    grid-template-columns: 1fr;
   }
 
   .nav-links {

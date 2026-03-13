@@ -150,38 +150,6 @@
             </div>
           </div>
         </div>
-        <div class="about-visual">
-          <div class="code-window">
-            <div class="code-header">
-              <span class="code-dot red"></span>
-              <span class="code-dot yellow"></span>
-              <span class="code-dot green"></span>
-              <span class="code-title">sw_architecture.h</span>
-            </div>
-            <pre class="code-body"><code><span class="kw">#ifndef</span> <span class="def">SW_ARCHITECTURE_H</span>
-<span class="kw">#define</span> <span class="def">SW_ARCHITECTURE_H</span>
-
-<span class="cm">/* ── Layered Architecture ── */</span>
-<span class="kw">typedef enum</span> {
-  <span class="def">LAYER_BSP</span>,        <span class="cm">/* Board Support   */</span>
-  <span class="def">LAYER_MCAL</span>,       <span class="cm">/* uC Abstraction  */</span>
-  <span class="def">LAYER_ECU_AL</span>,     <span class="cm">/* ECU Abstraction  */</span>
-  <span class="def">LAYER_SERVICES</span>,   <span class="cm">/* Middleware Stack */</span>
-  <span class="def">LAYER_APPLICATION</span> <span class="cm">/* App Software     */</span>
-} <span class="tp">SwLayer_t</span>;
-
-<span class="cm">/* ── Reusable Module Config ── */</span>
-<span class="kw">typedef struct</span> {
-  <span class="tp">SwLayer_t</span>    layer;
-  <span class="tp">const char</span>  *name;
-  <span class="tp">Version_t</span>    version;
-  <span class="tp">bool</span>         portable;  <span class="cm">/* TRUE */</span>
-  <span class="tp">bool</span>         tested;    <span class="cm">/* TRUE */</span>
-} <span class="tp">SwModule_t</span>;
-
-<span class="kw">#endif</span></code></pre>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -217,8 +185,29 @@
           <div class="card-tag">ASIL-C Compliant</div>
         </div>
 
-        <!-- BMS -->
+        <!-- Onboard Charger -->
         <div class="expertise-card" data-aos="fade-up" data-aos-delay="100">
+          <div class="card-glow"></div>
+          <div class="card-icon charger">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+          </div>
+          <h3>Onboard Charger (OBC)</h3>
+          <p class="card-subtitle">AC-DC Power Conversion</p>
+          <ul class="card-features">
+            <li>High Performance PFC, PSFB &amp; LLC algorithms</li>
+            <li>Synchronous rectification</li>
+            <li>Safety interlock & Protection</li>
+            <li>Thermal derating management</li>
+            <li>IEC 61851 / IS 17017 compliance</li>
+            <li>Multi-battery type configurable</li>
+          </ul>
+          <div class="card-tag">Power Electronics</div>
+        </div>
+
+        <!-- BMS -->
+        <div class="expertise-card" data-aos="fade-up" data-aos-delay="200">
           <div class="card-glow"></div>
           <div class="card-icon bms">
             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -239,7 +228,7 @@
         </div>
 
         <!-- Connectivity ECU -->
-        <div class="expertise-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="expertise-card" data-aos="fade-up" data-aos-delay="300">
           <div class="card-glow"></div>
           <div class="card-icon ecu">
             <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -258,27 +247,6 @@
             <li>Gateway functionality</li>
           </ul>
           <div class="card-tag">Connected Vehicle</div>
-        </div>
-
-        <!-- Onboard Charger -->
-        <div class="expertise-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="card-glow"></div>
-          <div class="card-icon charger">
-            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
-            </svg>
-          </div>
-          <h3>Onboard Charger (OBC)</h3>
-          <p class="card-subtitle">AC-DC Power Conversion</p>
-          <ul class="card-features">
-            <li>Platform SW integration</li>
-            <li>Charging state machine</li>
-            <li>Safety interlock management</li>
-            <li>Diagnostic stack integration</li>
-            <li>Communication protocols</li>
-            <li>Boot-loader support</li>
-          </ul>
-          <div class="card-tag">Power Electronics</div>
         </div>
       </div>
     </div>
