@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollReveal();
   initParticles();
   initSmoothScroll();
+  initRoleSlider();
 });
 
 /* ═══════ NAVBAR SCROLL EFFECT ═══════ */
@@ -221,3 +222,15 @@ document.addEventListener('mousemove', (e) => {
     }
   });
 });
+
+/* ═══════ ROLE SLIDER ═══════ */
+function initRoleSlider() {
+  const chips = document.querySelectorAll('.role-chip');
+  if (!chips.length) return;
+  let current = 0;
+  setInterval(() => {
+    chips[current].classList.remove('active');
+    current = (current + 1) % chips.length;
+    chips[current].classList.add('active');
+  }, 2000);
+}
