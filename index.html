@@ -460,7 +460,7 @@
       </div>
       <div class="projects-grid">
         <!-- Platform Project -->
-        <div class="project-card featured">
+        <div class="project-card featured" data-project="bsw">
           <div class="project-badge">Platform Project</div>
           <h3>BSW Middleware Software Stacks</h3>
           <p class="project-category">Automotive — Common Platform for 2W/3W EV Products</p>
@@ -529,7 +529,7 @@
         </div>
 
         <!-- Motor Controller L1 -->
-        <div class="project-card">
+        <div class="project-card" data-project="mc-l1">
           <div class="project-badge">Product</div>
           <h3>2W Traction Motor Controller — L1</h3>
           <p class="project-category">Automotive L1 Category — Electric Two-Wheeler</p>
@@ -548,7 +548,7 @@
         </div>
 
         <!-- Motor Controller L2 -->
-        <div class="project-card">
+        <div class="project-card" data-project="mc-l2">
           <div class="project-badge asil">ASIL-C</div>
           <h3>2W Traction Motor Controller — L2</h3>
           <p class="project-category">Automotive L2 Category — ASIL-C Safety</p>
@@ -566,7 +566,7 @@
         </div>
 
         <!-- Suspension Controller -->
-        <div class="project-card">
+        <div class="project-card" data-project="suspension">
           <div class="project-badge asil">ASIL-B</div>
           <h3>Suspension Air Compressor Controller</h3>
           <p class="project-category">Hybrid Vehicle — Functional Safety</p>
@@ -584,7 +584,7 @@
         </div>
 
         <!-- IoT -->
-        <div class="project-card">
+        <div class="project-card" data-project="iot">
           <div class="project-badge">IoT</div>
           <h3>Smart Refrigerator System</h3>
           <p class="project-category">IoT — Connected Appliance</p>
@@ -601,7 +601,7 @@
         </div>
 
         <!-- Research -->
-        <div class="project-card">
+        <div class="project-card" data-project="research">
           <div class="project-badge">Research</div>
           <h3>100+ Research Prototypes</h3>
           <p class="project-category">Diverse Embedded Domains</p>
@@ -958,6 +958,38 @@
       </div>
     </div>
   </section>
+
+  <!-- ===================== PROJECT DETAIL MODAL ===================== -->
+  <div class="modal-overlay" id="projectModal">
+    <div class="modal">
+      <button class="modal-close" id="modalClose" aria-label="Close">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="modal-header">
+        <span class="modal-badge" id="modalBadge"></span>
+        <h2 id="modalTitle"></h2>
+        <p class="modal-subtitle" id="modalSubtitle"></p>
+      </div>
+      <div class="modal-body">
+        <div class="modal-section">
+          <h3>Overview</h3>
+          <p id="modalOverview"></p>
+        </div>
+        <div class="modal-section">
+          <h3>Block Diagram</h3>
+          <div class="block-diagram" id="modalDiagram"></div>
+        </div>
+        <div class="modal-section">
+          <h3>Key Features &amp; My Contributions</h3>
+          <ul class="modal-features" id="modalFeatures"></ul>
+        </div>
+        <div class="modal-section">
+          <h3>Technology Stack</h3>
+          <div class="modal-tags" id="modalTech"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ===================== FOOTER ===================== -->
   <footer class="footer">
