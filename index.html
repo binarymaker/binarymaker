@@ -22,12 +22,17 @@
         <li><a href="#expertise">Expertise</a></li>
         <li><a href="#architecture">Architecture</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#impact">Impact</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#leadership">Leadership</a></li>
         <li><a href="#articles">Articles</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <a href="assets/Resume_gokul.pdf" download="Gokul_Arunachalam_Resume.pdf" class="nav-resume-cta">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Resume
+      </a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
         <span></span><span></span><span></span>
       </button>
@@ -459,109 +464,203 @@
         <p class="section-desc">Key projects demonstrating architectural vision and production-grade embedded software delivery</p>
       </div>
       <div class="projects-grid">
-        <!-- Platform Project -->
-        <div class="project-card featured" data-project="bsw">
-          <div class="project-badge">Platform Project</div>
-          <h3>BSW Middleware Software Stacks</h3>
-          <p class="project-category">Automotive — Common Platform for 2W/3W EV Products</p>
+        <!-- ══════════════════════════════════════════════
+             PRIORITY 1 — FEATURED PRODUCTS
+             Motor Controller | Charger | BMS
+             ══════════════════════════════════════════════ -->
+
+        <!-- Motor Controller (DCU) -->
+        <div class="project-card featured" data-project="mc">
+          <div class="project-card-top">
+            <div class="project-badge asil">ASIL-C</div>
+            <span class="explore-hint">Click to deep-dive →</span>
+          </div>
+          <h3>Motor Controller (DCU)</h3>
+          <p class="project-category">Traction Inverter — 2W/3W Electric Vehicle | L1 &amp; L2</p>
           <p class="project-desc">
-            Designed and developed a complete reusable middleware platform serving as the foundation
-            for all 2W/3W products — motor controllers, BMS, connectivity ECUs, and onboard chargers.
+            FOC-based traction motor controller from bare-metal register configuration to production release.
+            Covers L1 (performance) and <strong>ASIL-C L2 (safety)</strong> — sub-100µs control loop on
+            entry-level MCU using fixed-point DSP arithmetic.
           </p>
           <div class="project-deliverables">
             <h4>Key Deliverables</h4>
             <div class="deliverable-grid">
-              <div class="deliverable">
-                <span class="deliverable-icon">&#9881;</span>
-                <span>OS — Scheduler, HSM framework, timers, queues</span>
-              </div>
-              <div class="deliverable">
-                <span class="deliverable-icon">&#9881;</span>
-                <span>CAN TP Stack + DBC-to-config generator tool</span>
-              </div>
-              <div class="deliverable">
-                <span class="deliverable-icon">&#9881;</span>
-                <span>UDS Diagnostic Stack — Client &amp; Server</span>
-              </div>
-              <div class="deliverable">
-                <span class="deliverable-icon">&#9881;</span>
-                <span>DTC / Fault Code Memory Manager</span>
-              </div>
-              <div class="deliverable">
-                <span class="deliverable-icon">&#9881;</span>
-                <span>NVM Manager — Flash, EEPROM emulation</span>
-              </div>
-              <div class="deliverable">
-                <span class="deliverable-icon">&#9881;</span>
-                <span>Safety — RAM test, ROM CRC, Watchdog manager</span>
-              </div>
-              <div class="deliverable">
-                <span class="deliverable-icon">&#9881;</span>
-                <span>DSP Library — Filters, IIR, hysteresis, calculus</span>
-              </div>
-              <div class="deliverable">
-                <span class="deliverable-icon">&#9881;</span>
-                <span>Fail-safe Bootloader + Updater</span>
-              </div>
-              <div class="deliverable">
-                <span class="deliverable-icon">&#9881;</span>
-                <span>IO Abstraction — Digital &amp; Analog with filtering</span>
-              </div>
-              <div class="deliverable">
-                <span class="deliverable-icon">&#9881;</span>
-                <span>Python UDS Client GUI Tool</span>
-              </div>
-              <div class="deliverable">
-                <span class="deliverable-icon">&#9881;</span>
-                <span>Automated unit testing &amp; static test pipelines</span>
-              </div>
-              <div class="deliverable">
-                <span class="deliverable-icon">&#9881;</span>
-                <span>Git sub-module organization for rapid deployment</span>
-              </div>
+              <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>FOC — Clarke, Park, SVPWM at 10 kHz (100µs cycle time)</span></div>
+              <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>Fixed-Point Q15/Q31 DSP — zero floating-point dependency</span></div>
+              <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>MTPA &amp; Flux Weakening for extended speed range</span></div>
+              <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>TI DRV32XX smart gate driver with SPI + BIST diagnostics</span></div>
+              <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>ASIL-C: RAM march test, ROM CRC, ADC plausibility, PWM monitor</span></div>
+              <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>Hill assist, regen braking &amp; predictive thermal derate (−30%)</span></div>
             </div>
           </div>
           <div class="project-impact">
             <span class="impact-label">Impact:</span>
-            Enabled 4+ product lines to share a battle-tested middleware stack, drastically reducing
-            development time and increasing software quality through centralized bug fixes.
+            92%+ motor efficiency across 50+ variants. ISO 26262 ASIL-C compliant. Sub-100µs FOC loop on XMC1.
           </div>
         </div>
 
-        <!-- Motor Controller L1 -->
-        <div class="project-card" data-project="mc-l1">
-          <div class="project-badge">Product</div>
-          <h3>2W Traction Motor Controller — L1</h3>
-          <p class="project-category">Automotive L1 Category — Electric Two-Wheeler</p>
+        <!-- Charger Controller (OBC / OFBC) -->
+        <div class="project-card featured" data-project="charger">
+          <div class="project-card-top">
+            <div class="project-badge">Power Electronics</div>
+            <span class="explore-hint">Click to deep-dive →</span>
+          </div>
+          <h3>Charger Controller (OBC / OFBC)</h3>
+          <p class="project-category">AC-DC Power Conversion — 3kW | TI C2000 | Multi-OEM</p>
           <p class="project-desc">
-            Full software development for a two-wheeler traction motor controller from system requirements
-            to production release.
+            Full-stack power electronics firmware for PFC + LLC + PSFB topologies.
+            The flagship innovation: a <strong>CLB-based CPU-independent synchronous rectifier engine</strong>
+            using VDS sensing — the most challenging secondary-side control in power electronics.
+          </p>
+          <div class="project-deliverables">
+            <h4>Key Deliverables</h4>
+            <div class="deliverable-grid">
+              <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>CLB SR engine — VDS-based CPU-free gate firing at 50 kHz+</span></div>
+              <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>LLC 6-module stack: current, resonant, power, voltage, conditioner, SM</span></div>
+              <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>PFC with CLB inner current loop — CPU handles outer voltage only</span></div>
+              <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>SOGI-PLL for AC grid synchronisation &amp; phase tracking</span></div>
+              <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>Multi-OEM: Santhos, TATA, TVS from a single configurable codebase</span></div>
+              <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>IEC 61851 / IS 17017 compliance &amp; thermal derating management</span></div>
+            </div>
+          </div>
+          <div class="project-impact">
+            <span class="impact-label">Impact:</span>
+            95%+ charging efficiency. CLB SR eliminates CPU latency on secondary firing. 3 OEM deployments.
+          </div>
+        </div>
+
+        <!-- Battery Management System -->
+        <div class="project-card featured" data-project="bms">
+          <div class="project-card-top">
+            <div class="project-badge safety">AIS156</div>
+            <span class="explore-hint">Click to deep-dive →</span>
+          </div>
+          <h3>Battery Management System</h3>
+          <p class="project-category">BMS — NMC &amp; LFP Chemistry | Batrix 48V | Renesas RH850</p>
+          <p class="project-desc">
+            Chemistry-agnostic BMS with hybrid SOC estimation (±2%), passive cell balancing,
+            6-layer hardware protection, and adaptive BMS-to-Charger isolated CAN communication.
+            Single firmware covers 50+ vehicle configs via the pluggable SEEK chemistry driver.
+          </p>
+          <div class="project-deliverables">
+            <h4>Key Deliverables</h4>
+            <div class="deliverable-grid">
+              <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>Hybrid SOC: Coulomb counting + OCV self-calibration (±2% accuracy)</span></div>
+              <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>TI AFIC driver — individual cell voltage within ±10mV</span></div>
+              <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>Passive cell balancing with HST driver control (&gt;95% equalization)</span></div>
+              <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>6-layer protection: OV / UV / OC / SC / OT / UT</span></div>
+              <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>BMS-to-Charger isolated CAN: adaptive CC/CV charging protocol</span></div>
+              <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>SEEK chemistry layer: LFP, NCA, NCM — zero firmware changes</span></div>
+            </div>
+          </div>
+          <div class="project-impact">
+            <span class="impact-label">Impact:</span>
+            ±2% SOC. 50+ configs on one firmware. AIS156 compliant. 30% faster charging via adaptive BMS-charger dialogue.
+          </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════════
+             PRIORITY 2 — SECONDARY PRODUCTS
+             Bootloader & OTA | Connectivity ECU
+             ══════════════════════════════════════════════ -->
+
+        <!-- Bootloader & OTA -->
+        <div class="project-card" data-project="bootloader-ota">
+          <div class="project-badge">Production Critical</div>
+          <h3>Bootloader &amp; OTA Updates</h3>
+          <p class="project-category">Dual-Bootloader Architecture — 8,000+ Successful Deployments</p>
+          <p class="project-desc">
+            Production-proven dual-bootloader with full ISO 14229 UDS stack and Python-based client tooling
+            with multi-vendor CAN HAL. Zero ECU bricks across 8,000+ field firmware deployments.
           </p>
           <ul class="project-tags">
-            <li>FOC Algorithm</li>
-            <li>Fixed-Point DSP</li>
-            <li>Drive Mode SM</li>
-            <li>Throttle Map</li>
-            <li>Calibration Tool GUI</li>
-            <li>MISRA Compliant</li>
+            <li>Dual-Bootloader</li>
+            <li>UDS ISO 14229</li>
+            <li>CAN-TP ISO 15765</li>
+            <li>Security Access (0x27)</li>
+            <li>Python UDS Client</li>
+            <li>CRC-32 / NVM</li>
           </ul>
         </div>
 
-        <!-- Motor Controller L2 -->
+        <!-- Connectivity / MFECU -->
+        <div class="project-card" data-project="connectivity">
+          <div class="project-badge">Connected Vehicle</div>
+          <h3>Connectivity ECU (MFECU)</h3>
+          <p class="project-category">Multifunction ECU — CAN/FD | OTA Orchestration | BLE</p>
+          <p class="project-desc">
+            CAN/FD vehicle network hub orchestrating Motor Controller, BMS, OBC, and BCM.
+            Multi-ECU OTA firmware update orchestration with BLE smartphone connectivity and telematics.
+          </p>
+          <ul class="project-tags">
+            <li>CAN / CAN-FD</li>
+            <li>J1939</li>
+            <li>OTA Orchestration</li>
+            <li>UDS Client</li>
+            <li>BLE / Telematics</li>
+            <li>Gateway</li>
+          </ul>
+        </div>
+
+        <!-- ══════════════════════════════════════════════
+             PLATFORM PROJECT — BSW MIDDLEWARE STACK
+             ══════════════════════════════════════════════ -->
+
+        <!-- BSW Platform -->
+        <div class="project-card featured" data-project="bsw">
+          <div class="project-card-top">
+            <div class="project-badge">Platform Project</div>
+            <span class="explore-hint">Click to deep-dive →</span>
+          </div>
+          <h3>BSW Middleware Software Stacks</h3>
+          <p class="project-category">Automotive — Common Platform for 2W/3W EV Products</p>
+          <p class="project-desc">
+            A complete reusable middleware platform serving as the foundation for all 2W/3W EV products
+            — motor controllers, BMS, connectivity ECUs, and onboard chargers.
+            Write once, deploy everywhere via Git sub-modules. 50–60% of each new ECU project is "buy, not build."
+          </p>
+          <div class="project-deliverables">
+            <h4>Key Deliverables (23 Modules)</h4>
+            <div class="deliverable-grid">
+              <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>OS — Scheduler, HSM framework, timers, event queues</span></div>
+              <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>CAN TP Stack + DBC-to-config auto-generator tool</span></div>
+              <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>UDS Diagnostic Stack — Client &amp; Server (16+ services)</span></div>
+              <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>DTC / Fault Code Memory Manager (snapshot + extended data)</span></div>
+              <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>NVM Manager — Flash, EEPROM emulation with wear-leveling</span></div>
+              <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>Safety: RAM march test, ROM CRC, Watchdog manager</span></div>
+              <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>DSP Library — Digital filters (IIR/FIR), hysteresis, calculus</span></div>
+              <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>Fail-safe Dual-Bootloader + Python UDS updater tool</span></div>
+              <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>AES-256 (FIPS-197) cryptographic module</span></div>
+              <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>IO Abstraction — Digital &amp; Analog with configurable filtering</span></div>
+              <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>CI/CD — MISRA, unit tests, coverage &gt;90%, Doxygen</span></div>
+              <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>Git sub-module organisation for rapid multi-product deployment</span></div>
+            </div>
+          </div>
+          <div class="project-impact">
+            <span class="impact-label">Impact:</span>
+            4+ product lines share one battle-tested stack — 3–4× faster ECU development through centralised, versioned, production-proven modules.
+          </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════════
+             ADDITIONAL PROJECTS
+             ══════════════════════════════════════════════ -->
+
+        <!-- MC-L2 ASIL-C Deep Safety -->
         <div class="project-card" data-project="mc-l2">
           <div class="project-badge asil">ASIL-C</div>
-          <h3>2W Traction Motor Controller — L2</h3>
-          <p class="project-category">Automotive L2 Category — ASIL-C Safety</p>
+          <h3>Motor Controller — L2 Safety Deep Dive</h3>
+          <p class="project-category">ISO 26262 ASIL-C | TI DRV32XX Smart Gate Driver</p>
           <p class="project-desc">
-            Safety-critical motor controller with functional safety compliance. Smart inverter gate
-            driver integration and built-in self-test drivers.
+            Safety-critical motor controller with ISO 26262 ASIL-C compliance, TI DRV32XX smart gate driver
+            BIST integration, and comprehensive hardware self-test framework.
           </p>
           <ul class="project-tags">
             <li>TI DRV32XX</li>
             <li>BIST Drivers</li>
-            <li>BSW Integration</li>
             <li>ADC/PWM/RAM/ROM Tests</li>
-            <li>ISO 26262</li>
+            <li>ISO 26262 ASIL-C</li>
+            <li>Watchdog Manager</li>
           </ul>
         </div>
 
@@ -569,17 +668,17 @@
         <div class="project-card" data-project="suspension">
           <div class="project-badge asil">ASIL-B</div>
           <h3>Suspension Air Compressor Controller</h3>
-          <p class="project-category">Hybrid Vehicle — Functional Safety</p>
+          <p class="project-category">Hybrid Vehicle — ISO 26262 ASIL-B</p>
           <p class="project-desc">
-            Software architecture and bootloader development for a hybrid vehicle's suspension
-            air compressor motor controller with full ISO 26262 safety framework.
+            Software architecture design and UDS bootloader development for a hybrid vehicle's suspension
+            air compressor motor controller. Full ISO 26262 safety framework from concept to production.
           </p>
           <ul class="project-tags">
             <li>SW Architecture</li>
             <li>UDS Bootloader</li>
-            <li>Board Bring-up</li>
-            <li>ISO 26262</li>
-            <li>Peer Review</li>
+            <li>Board Bring-up (RH850)</li>
+            <li>ISO 26262 ASIL-B</li>
+            <li>Peer Review Lead</li>
           </ul>
         </div>
 
@@ -587,15 +686,16 @@
         <div class="project-card" data-project="iot">
           <div class="project-badge">IoT</div>
           <h3>Smart Refrigerator System</h3>
-          <p class="project-category">IoT — Connected Appliance</p>
+          <p class="project-category">IoT — Connected Appliance with OTA</p>
           <p class="project-desc">
-            Automatic defrost system with energy monitoring, smartphone temperature control,
-            and OTA firmware update capability.
+            End-to-end embedded product development: automatic defrost control, real-time energy monitoring,
+            BLE smartphone control, and OTA firmware updates with a custom lightweight bootloader.
           </p>
           <ul class="project-tags">
             <li>OTA Updates</li>
             <li>Custom Bootloader</li>
             <li>BSP Development</li>
+            <li>BLE Connectivity</li>
             <li>Energy Monitor</li>
           </ul>
         </div>
@@ -606,17 +706,84 @@
           <h3>100+ Research Prototypes</h3>
           <p class="project-category">Diverse Embedded Domains</p>
           <p class="project-desc">
-            Extensive research portfolio spanning evaluation boards, BSPs, MATLAB, Python,
-            Raspberry Pi, OpenCV, and cost-effective agriculture &amp; industrial solutions.
+            Extensive portfolio spanning evaluation board bring-ups, BSP development, MATLAB simulation,
+            Python tooling, Raspberry Pi + OpenCV image processing, FPGA/VLSI, and agriculture IoT solutions.
           </p>
           <ul class="project-tags">
-            <li>MATLAB</li>
+            <li>MATLAB / Simulink</li>
             <li>Python</li>
-            <li>Raspberry Pi</li>
-            <li>OpenCV</li>
-            <li>VLSI</li>
-            <li>Agriculture</li>
+            <li>Raspberry Pi + OpenCV</li>
+            <li>FPGA / VLSI</li>
+            <li>Agriculture IoT</li>
           </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== IMPACT METRICS ===================== -->
+  <section id="impact" class="section impact-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Quantified Impact</span>
+        <h2 class="section-title">Real Numbers, <span class="text-gradient">Real Results</span></h2>
+        <p class="section-desc">Production-proven metrics from deployed systems across 2W/3W EV platforms</p>
+      </div>
+      <div class="impact-grid">
+        <div class="impact-card">
+          <div class="impact-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="impact-number">8,000<span class="impact-sup">+</span></div>
+          <div class="impact-title">ECU Boots Saved</div>
+          <div class="impact-desc">Dual-bootloader architecture — zero field bricks across all production deployments. 99.98% success rate.</div>
+          <div class="impact-domain">Bootloader &amp; OTA</div>
+        </div>
+        <div class="impact-card">
+          <div class="impact-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <div class="impact-number">3–4<span class="impact-sup">×</span></div>
+          <div class="impact-title">Faster Development</div>
+          <div class="impact-desc">Reusable BSW middleware — 50–60% of each new ECU project becomes "buy, not build" from a proven library.</div>
+          <div class="impact-domain">BSW Architecture</div>
+        </div>
+        <div class="impact-card">
+          <div class="impact-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="6" width="18" height="12" rx="2"/><path d="M22 10v4"/><path d="M6 10v4M10 10v4M14 10v4"/></svg>
+          </div>
+          <div class="impact-number">50<span class="impact-sup">+</span></div>
+          <div class="impact-title">Configs on 1 Firmware</div>
+          <div class="impact-desc">Chemistry-agnostic BMS with pluggable SEEK driver layer — LFP, NCA, NCM without a single line of firmware change.</div>
+          <div class="impact-domain">Battery Management</div>
+        </div>
+        <div class="impact-card">
+          <div class="impact-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+          </div>
+          <div class="impact-number">±2<span class="impact-sup">%</span></div>
+          <div class="impact-title">SOC Accuracy</div>
+          <div class="impact-desc">Hybrid Coulomb counting + OCV calibration with self-justification algorithm continuously tracking divergence.</div>
+          <div class="impact-domain">BMS Algorithm</div>
+        </div>
+        <div class="impact-card">
+          <div class="impact-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>
+          </div>
+          <div class="impact-number">92<span class="impact-sup">%+</span></div>
+          <div class="impact-title">Motor Efficiency</div>
+          <div class="impact-desc">FOC with MTPA optimization sustaining peak efficiency across 50+ motor variants in production deployment.</div>
+          <div class="impact-domain">Motor Control</div>
+        </div>
+        <div class="impact-card">
+          <div class="impact-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12l2 2 4-4"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div class="impact-number">ASIL<span class="impact-sup">-C</span></div>
+          <div class="impact-title">Safety Compliance</div>
+          <div class="impact-desc">ISO 26262 ASIL-C traction systems &amp; AIS156 BMS in production — TÜV SÜD certified functional safety engineer.</div>
+          <div class="impact-domain">Functional Safety</div>
         </div>
       </div>
     </div>
@@ -690,7 +857,7 @@
         <div class="skill-category">
           <h3><span class="cat-icon">&#x2699;</span> Microcontrollers</h3>
           <div class="skill-tags">
-            <span>Renesas RH850</span><span>Renesas RL78</span><span>STM32 (M0+, M3)</span>
+            <span class="primary">TI C2000 (F28x)</span><span>Renesas RH850</span><span>Renesas RL78</span><span>STM32 (M0+, M3)</span>
             <span>dsPIC33EV</span><span>Infineon XMC1400</span><span>PIC 16F/18F</span>
             <span>Xilinx Spartan 3E</span><span>ARM7 LPC2148</span><span>Arduino</span><span>Raspberry Pi</span>
           </div>
@@ -962,9 +1129,22 @@
   <!-- ===================== PROJECT DETAIL MODAL ===================== -->
   <div class="modal-overlay" id="projectModal">
     <div class="modal">
-      <button class="modal-close" id="modalClose" aria-label="Close">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-      </button>
+      <div class="modal-topbar">
+        <div class="modal-nav">
+          <button class="modal-nav-btn" id="modalPrev" aria-label="Previous project">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+            Prev
+          </button>
+          <span class="modal-counter" id="modalCounter">1 / 10</span>
+          <button class="modal-nav-btn" id="modalNext" aria-label="Next project">
+            Next
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+        <button class="modal-close" id="modalClose" aria-label="Close">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
       <div class="modal-header">
         <span class="modal-badge" id="modalBadge"></span>
         <h2 id="modalTitle"></h2>
@@ -972,19 +1152,19 @@
       </div>
       <div class="modal-body">
         <div class="modal-section">
-          <h3>Overview</h3>
+          <h3 class="modal-section-heading"><span class="modal-section-num">01</span> Project Overview</h3>
           <p id="modalOverview"></p>
         </div>
         <div class="modal-section">
-          <h3>Block Diagram</h3>
+          <h3 class="modal-section-heading"><span class="modal-section-num">02</span> Architecture Block Diagram</h3>
           <div class="block-diagram" id="modalDiagram"></div>
         </div>
         <div class="modal-section">
-          <h3>Key Features &amp; My Contributions</h3>
+          <h3 class="modal-section-heading"><span class="modal-section-num">03</span> Key Features &amp; Contributions</h3>
           <ul class="modal-features" id="modalFeatures"></ul>
         </div>
         <div class="modal-section">
-          <h3>Technology Stack</h3>
+          <h3 class="modal-section-heading"><span class="modal-section-num">04</span> Technology Stack</h3>
           <div class="modal-tags" id="modalTech"></div>
         </div>
       </div>
