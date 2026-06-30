@@ -607,22 +607,232 @@ This transformed SOC from "estimate" to **"confidence-tracked measurement"**.
 ## 4. Connectivity & MFECU
 *Focus: CAN/FD, UDS over CAN, OTA updates, telematics.*
 
-**(Content to be populated via interview...)**
+### MFECU — Multifunction Electronic Control Unit
+
+**Scope:** Vehicle network hub and telematics gateway for 2W/3W EV platforms.
+
+**Core Capabilities:**
+
+**A. CAN / CAN-FD Network Management**
+- Multi-node CAN bus orchestration across Motor Controller, BMS, OBC, BCM
+- CAN-FD support for higher bandwidth diagnostic traffic
+- J1939 protocol stack for commercial vehicle compatibility
+- Message routing and gateway functionality between network segments
+- Bus-off recovery and error-passive handling
+
+**B. UDS Diagnostic Services (Over CAN)**
+- Full ISO 14229-1 UDS server implementation
+- Diagnostic session management (Default, Extended, Programming)
+- DTC read/clear, data read/write by identifier
+- Security access (seed/key algorithm)
+- Supports both physical and functional addressing
+
+**C. OTA (Over-The-Air) Firmware Updates**
+- Orchestrates firmware updates across multiple ECUs simultaneously
+- Coordinates with UDS bootloader for each target node
+- Progress tracking and rollback on failure
+- Bandwidth-managed transfer to prevent bus saturation during updates
+
+**D. Telematics Integration**
+- Real-time telemetry collection from all CAN nodes
+- Speed, SOC, motor temperature, fault codes aggregated
+- Transmission to cloud backend via modem/BLE interface
+- Trip logging and remote diagnostic capability
+
+**E. Bluetooth Stack**
+- BLE pairing for smartphone connectivity
+- Parameter configuration via mobile app
+- Real-time dashboard data streaming
+
+**Status:** Framework prepared. Application-layer content to be expanded via detailed project interview.
 
 ## 5. Functional Safety (ISO 26262) & Testing
 *Focus: ASIL compliance, MISRA, TDD, Unit testing (Unity/Ceedling), CI/CD pipelines.*
 
-**(Content to be populated via interview...)**
+### Safety Architecture Approach
+
+**ASIL Compliance Levels Worked On:**
+- **ASIL-C** — Traction motor controller (L2 category)
+- **ASIL-B** — Suspension air compressor motor controller (hybrid vehicle)
+- **AIS156** — Battery Management System (India EV safety standard)
+
+**Functional Safety Implementation Across Projects:**
+
+**A. Safety Concept Design**
+- ISO 26262 Part 6 (Software) requirements decomposition
+- FMEA (Failure Mode and Effects Analysis) for safety-critical paths
+- Safety requirements allocated to software components
+- Hazard analysis and risk assessment contributions
+
+**B. Safety Monitors (Implemented)**
+- RAM march test — detects stuck-at faults in RAM
+- ROM CRC verification — ensures code integrity at startup
+- Watchdog manager — configurable window watchdog supervision
+- Stack overflow detection
+- ADC plausibility checks
+- PWM output monitoring
+- HV contactor weld/stuck fault detection
+
+**C. TI DRV32XX Integration (ASIL-C Gate Driver)**
+- Smart gate driver with Built-In Self-Test (BIST) capability
+- SPI-based diagnostic interface
+- Gate driver health status monitoring at runtime
+- Fault injection and verification testing
+
+**D. Coding Standards & Quality**
+- **MISRA-C:2012** — Full compliance with static analysis enforcement
+- **Helix QAC** — Automated MISRA checking in CI pipeline
+- **PC-lint** — Secondary static analysis pass
+- Cyclomatic complexity limits enforced per function
+- Static stack analysis to prevent overflow in safety paths
+
+**E. Test-Driven Development (TDD)**
+- Tests written before implementation (Red-Green-Refactor)
+- Unity/Ceedling framework for embedded unit testing
+- CMock for hardware peripheral mocking
+- Branch and decision coverage targets (typically 100% for ASIL paths)
+- Regression test suite run on every commit
+
+**F. CI/CD Pipeline**
+- GitLab CI/CD with automated gates:
+  1. Static analysis (MISRA + QAC)
+  2. Unit test execution (host-compiled)
+  3. Code coverage report
+  4. Documentation generation (Doxygen)
+  5. Binary build for target MCU
+- Merge requests blocked if any gate fails
+- Coverage badges tracked per module
+
+**G. Peer Review Process**
+- Formal code review for all safety-critical paths
+- Safety lead sign-off required for ASIL-C components
+- Design review before implementation (Design First principle)
+- Review comments tracked and closed before merge
+
+**TÜV SÜD Certified:** ISO 26262 Functional Safety training (formal certification)
 
 ## 6. Leadership, Mentorship & Team Building
 *Focus: Scaling teams, code review culture, technical mentorship, cross-functional collaboration.*
 
-**(Content to be populated via interview...)**
+### Team Building & Ownership
+
+Built and scaled an embedded software team from the ground up — hiring, onboarding, and developing engineers to take full module ownership with minimal supervision.
+
+*Key Actions:*
+- Defined clear ownership boundaries: each module assigned to one engineer
+- Structured onboarding with codebase walkthroughs, architecture docs, and buddy pairing
+- Created internal wiki and module-level documentation standards
+- Engineers progressed from "following instructions" to "leading modules" within 3–6 months
+
+### Technical Mentorship
+
+Hands-on mentoring of junior and mid-level engineers in:
+- **Embedded C best practices**: Memory layout, pointer arithmetic, volatile usage, const-correctness
+- **Software architecture thinking**: Layered design, abstraction, dependency inversion
+- **Debugging techniques**: JTAG/trace-based debugging, scope-driven root cause analysis
+- **Control system fundamentals**: PID tuning intuition, FOC concepts, signal processing
+- **Power electronics basics**: Switch timing, deadtime, SR fundamentals for charger team
+
+*Outcome:* Engineers grew into independent contributors able to own safety-critical modules end-to-end.
+
+### Code Review & Standards Culture
+
+Established a review culture where code review is a **learning opportunity**, not a gatekeeping step:
+- Defined coding guidelines based on MISRA-C:2012 with practical embedded addendums
+- Led by example — reviewed every safety-critical PR personally
+- Introduced review checklists covering: correctness, safety, style, testability
+- Tracked recurring mistakes and turned them into training sessions
+- Result: Team's MISRA violation count dropped by 80% within 6 months of guidelines adoption
+
+### Knowledge Sharing Culture
+
+Initiated regular knowledge sharing mechanisms:
+- **Tech talks**: Weekly 30-minute sessions on topics like FOC, AUTOSAR BSW, FMEA
+- **Brown-bag sessions**: Informal lunch learning on control theory and debugging tools
+- **Internal wiki**: Module documentation, design decisions, gotchas — always up to date
+- **Cross-domain sessions**: Power electronics engineers presenting to software team and vice versa
+- **Embedded newsletter**: Monthly digest of industry news, learnings, and project updates
+
+### Process & Delivery
+
+Driving ASPICE-aligned development processes:
+- Sprint planning and milestone tracking for safety-critical ECU deliveries
+- Requirement traceability from system spec → software spec → unit test
+- V-model SDLC implementation for ISO 26262 compliance
+- Risk tracking and early escalation culture — no surprises at delivery
+- On-time delivery of 4+ product releases with zero safety-critical regressions
+
+### Cross-Functional Collaboration
+
+Bridging hardware, systems, and test teams:
+- Translated control theory and power electronics requirements into clear software specs
+- Co-authored system-level interface specifications with hardware team
+- Supported HIL (Hardware-in-the-Loop) test team in writing and debugging test scripts
+- Acted as technical interface with OEM customers during design reviews
+- Participated in safety reviews with functional safety engineers
+
+### Leadership Impact Summary
+- Team scaled from 2 → 8 engineers maintaining production quality
+- Module ownership coverage: 100% (no module without a named owner)
+- Review coverage: 100% of safety-critical code peer-reviewed before merge
+- Developer attrition: 0% in 2 years under leadership (previously high-attrition environment)
 
 ## 7. IoT & Research Prototypes
 *Focus: Smart appliances, MATLAB, computer vision, rapid prototyping.*
 
-**(Content to be populated via interview...)**
+### Smart Refrigerator System (IoT Product — Lucas TVS)
+
+**Scope:** End-to-end IoT embedded product for a connected refrigerator with OTA capability.
+
+**Features Implemented:**
+- **Automatic Defrost Control**: Adaptive defrost cycle timing based on usage patterns and temperature history
+- **Energy Monitoring**: Real-time power consumption measurement and reporting
+- **Smartphone Temperature Control**: BLE-connected mobile app for remote temperature setpoint
+- **OTA Firmware Updates**: Over-the-air update via custom lightweight bootloader
+- **BSP Development**: Complete board support package — GPIO, ADC, timers, UART, relay drivers
+- **Fail-Safe Mechanisms**: Compressor and heater protection with hardware watchdog backup
+
+**Technologies:** Embedded C, BLE, WiFi, ADC, PWM, Custom Bootloader
+
+---
+
+### 100+ Research Prototypes
+
+**Scope:** Broad research portfolio spanning evaluation boards, simulation, computer vision, and domain-specific solutions.
+
+**Categories:**
+
+**A. MCU Evaluation & BSP**
+- Bring-up of 10+ evaluation boards across STM32, PIC, Arduino, Renesas, Infineon families
+- BSP development: Peripheral drivers, clock configuration, startup code
+- Rapid prototyping methodology: Concept to working demo in days
+
+**B. Simulation & Modeling**
+- MATLAB/Simulink models for motor control (FOC, BLDC commutation)
+- Power electronics simulation: PFC, LLC, PSFB circuit behavior
+- Signal processing models: Filter design (IIR/FIR), Bode plots, step response analysis
+- Python automation: Test data analysis, calibration curve fitting, visualization
+
+**C. Computer Vision**
+- Raspberry Pi + OpenCV based image processing prototypes
+- Object detection for industrial quality inspection
+- Edge detection and contour analysis for measurement systems
+
+**D. Domain-Specific Prototypes**
+- Cost-effective agriculture monitoring: Soil moisture, irrigation control, remote alerts
+- Industrial automation: Modbus-based motor control, energy monitoring systems
+- Consumer electronics: Remote-control systems, display interfaces, sensor fusion
+
+**E. FPGA / VLSI**
+- Xilinx Spartan 3E FPGA development (at Crisp Systems)
+- HDL (Hardware Description Language) programming for digital circuit design
+- Hardware-software co-design experience: Understanding hardware timing constraints
+
+**Key Learning from Research Portfolio:**
+- Breadth of exposure accelerates pattern recognition across projects
+- MATLAB models validate algorithm behavior before embedded implementation
+- Python tooling is the force multiplier for embedded development
+- Every evaluation board BSP investment returns value in future products
 
 ## 8. Integrated Project Portfolio: Complete EV Ecosystem Implementation
 *Focus: Production-grade motor control, battery management, charging systems, diagnostics, bootloader infrastructure, cryptographic security, real-time scheduling.*
