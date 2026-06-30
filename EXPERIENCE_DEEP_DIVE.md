@@ -897,11 +897,56 @@ This section documents a comprehensive suite of **integrated automotive embedded
   - **Signal Conditioner**: Input filtering and conditioning
   - **State Machine**: Operating mode transitions
 
-**B. PFC (Power Factor Correction)**
+**A1. LLC Secondary Synchronous Rectification — CLB-Based Firing Engine**
+
+One of the most technically challenging aspects of the LLC converter is **secondary-side synchronous rectification (SR)**. Unlike primary-side switching (which is CPU-controlled), SR firing on the secondary cannot tolerate any CPU latency at high switching frequencies (250 kHz range). This is where the **CLB (Configurable Logic Block)** of the TI C2000 microcontroller became critical.
+
+*The Problem:*
+- The LLC secondary side operates at high frequency (~250 kHz) and requires precise timing to fire the SR MOSFETs within an optimal window
+- Any CPU intervention would introduce latency, causing **current stress on the MOSFET** or **missed ZCS (Zero-Current Switching) windows**
+- Traditional microcontroller-based SR control is inadequate at these frequencies due to interrupt response times
+
+*The Solution — CLB-Based Secondary Firing Engine:*
+
+The **CLB (Configurable Logic Block)** in TI C2000 is a programmable hardware peripheral — conceptually similar to a small FPGA/CPLD — that operates **completely independently of the CPU** as a real-time hardware core.
+
+I designed and implemented a **secondary SR firing engine entirely within the CLB**:
+
+1. **VDS-Based Dead Band Detection (VDS Method)**:
+   - The engine continuously monitors the **VDS (Drain-Source Voltage)** of the SR MOSFET on the secondary side
+   - When VDS crosses a threshold indicating the body diode is conducting (resonant current is flowing), the CLB fires the SR gate signal
+   - This eliminates the need for CPU polling or interrupt-driven detection
+
+2. **Optimal Firing Window Logic**:
+   - The CLB computes the correct ON-window for the SR MOSFET to avoid:
+     - **Current stress**: Firing too early or too late causes excessive peak current
+     - **MOSFET damage**: Incorrect timing during the resonant current zero-crossing leads to reverse recovery events
+   - The intelligent algorithm ensures SR turns ON only when the body diode is already conducting (VDS ≈ −0.7V), and turns OFF before current reverses
+
+3. **Real-Time Independent Core**:
+   - The CLB logic runs at hardware speed, **fully decoupled from the CPU execution context**
+   - CPU interaction is minimal — it only sets initial configuration parameters; thereafter the CLB operates autonomously
+   - This design achieves deterministic real-time behavior not possible via software ISRs
+
+4. **Hardware Implementation on PSMB/PSB Boards**:
+   - The CLB SR engine was deployed on the **Power Stage Module Board (PSMB)** and **Power Stage Board (PSB)** hardware platforms
+   - Real-time configuration of the CLB was done at system startup to adapt to different LLC operating points
+   - This enabled **high-speed synchronous rectification** across varying load and frequency conditions
+
+*Key Technical Achievement:*
+> Developed a fully CPU-independent secondary synchronous rectifier firing engine inside the C2000 CLB, using the VDS sensing method to detect optimal firing windows, avoiding MOSFET current stress and enabling reliable SR operation at switching frequencies up to 250 kHz.
+
+**B. PFC (Power Factor Correction) with CLB-Accelerated Current Control**
 - Input current shaping
 - Unity power factor achievement
 - Reduced line harmonic distortion (THD)
 - Boost converter topology
+
+*CLB Role in PFC & DC-DC Converter:*
+- For both the PFC stage and the downstream DC-DC (TC) converter, the **CLB was used as an internal current controller**
+- The CLB handles high-speed current loop control **independently of the CPU**, maintaining tight current regulation even at high switching frequencies
+- The CPU is responsible only for outer-loop voltage control and supervisory state management
+- This **CPU-minimal design** reduces the real-time burden on the main processor, improving overall system determinism and allowing the CPU to focus on communication, protection, and diagnostics
 
 **C. PSFB (Phase Shift Full Bridge)**
 - Alternative topology for specific OEM requirements
@@ -912,6 +957,8 @@ This section documents a comprehensive suite of **integrated automotive embedded
 - Multi-OEM compatibility demonstrated
 - Modular converter architecture
 - Switchable topologies for different markets
+- **CLB-based real-time control cores** for SR firing and current regulation — fully independent of CPU execution
+- C2000 microcontroller leveraged as both a DSP (for control algorithms) and a hardware logic engine (CLB) in a unified platform
 
 ---
 
@@ -1777,11 +1824,26 @@ This section extracts **every feature** of each middleware module, including sma
 - **Fault Detection**: Abnormal condition handling
 - **Shutdown Protocol**: Graceful power-down
 
+#### **7.7 CLB-Based Secondary Synchronous Rectifier (SR) Firing Engine**
+
+A seventh critical component — the **secondary synchronous rectifier controller** — was implemented entirely inside the **TI C2000 CLB (Configurable Logic Block)**:
+
+- **VDS Sensing**: Monitors drain-source voltage of secondary SR MOSFETs to detect body-diode conduction onset
+- **Optimal Gate Firing Window**: Algorithm determines exact ON/OFF timing to avoid reverse current and MOSFET stress
+- **CPU-Independent Real-Time Core**: The CLB logic runs as a standalone hardware engine with no CPU intervention after configuration
+- **High-Frequency Operation**: Supports SR firing at switching frequencies up to 250 kHz
+- **Hardware Platform**: Deployed on PSMB (Power Stage Module Board) and PSB (Power Stage Board)
+- **Real-Time Configuration**: CLB is configured at startup via CPU; thereafter operates fully autonomously
+
+*Why CLB over CPU-based SR?*
+At 250 kHz switching, the SR MOSFET firing window is measured in nanoseconds. Software-based ISR approaches introduce unacceptable latency that leads to body diode conduction losses and MOSFET current stress. Moving the SR engine to the CLB gave us hardware-speed determinism without FPGA hardware cost.
+
 #### **Unique LLC Achievements:**
 ✓ **Complete Topology Support**: All 6 layers integrated
 ✓ **Zero-Voltage Switching**: Soft-switching for efficiency >95%
 ✓ **Resonance Tracking**: Automatic frequency adjustment
 ✓ **Multi-Rail Support**: Can parallel controllers for 3kW
+✓ **CLB-Based SR Firing Engine**: CPU-independent secondary synchronous rectification at 250 kHz using VDS detection
 
 ---
 
@@ -1793,6 +1855,7 @@ This section extracts **every feature** of each middleware module, including sma
 - **Boost Converter Topology**: Step up voltage
 - **Full-Bridge Rectifier**: Clean AC → DC conversion
 - **Control Loop**: PI control of current reference
+- **CLB-Accelerated Inner Current Loop**: The fast current control loop is implemented in the C2000 CLB hardware, running independently of the CPU. The CPU handles only the outer voltage loop and system supervision, keeping the real-time burden minimal and control latency deterministic.
 
 ---
 
