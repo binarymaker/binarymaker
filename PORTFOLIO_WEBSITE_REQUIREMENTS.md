@@ -501,7 +501,7 @@ PROFESSIONAL EXPERIENCE
 
 [Company Names, Roles, Duration - simplified]
 • CRISP: Motor control diversity
-• ELJA ULTRA: Professional motor control engineering  
+• ELGI ULTRA: Professional motor control engineering  
 • LUCAS TVs: Automotive BLDC & STM32 ecosystem
 • [Current/Recent]: EV traction systems & BMS
 
