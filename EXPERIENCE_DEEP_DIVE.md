@@ -604,7 +604,7 @@ This transformed SOC from "estimate" to **"confidence-tracked measurement"**.
 
 7. **AIS156 compliance is achievable**: Formal standards exist; following them religiously prevents catastrophic field failures
 
-## 4. Connectivity & MFECU
+## 5. Connectivity & MFECU
 *Focus: CAN/FD, UDS over CAN, OTA updates, telematics.*
 
 ### MFECU — Multifunction Electronic Control Unit
@@ -646,7 +646,7 @@ This transformed SOC from "estimate" to **"confidence-tracked measurement"**.
 
 **Status:** Framework prepared. Application-layer content to be expanded via detailed project interview.
 
-## 5. Functional Safety (ISO 26262) & Testing
+## 6. Functional Safety (ISO 26262) & Testing
 *Focus: ASIL compliance, MISRA, TDD, Unit testing (Unity/Ceedling), CI/CD pipelines.*
 
 ### Safety Architecture Approach
@@ -711,7 +711,7 @@ This transformed SOC from "estimate" to **"confidence-tracked measurement"**.
 
 **TÜV SÜD Certified:** ISO 26262 Functional Safety training (formal certification)
 
-## 6. Leadership, Mentorship & Team Building
+## 7. Leadership, Mentorship & Team Building
 *Focus: Scaling teams, code review culture, technical mentorship, cross-functional collaboration.*
 
 ### Team Building & Ownership
@@ -777,7 +777,7 @@ Bridging hardware, systems, and test teams:
 - Review coverage: 100% of safety-critical code peer-reviewed before merge
 - Developer attrition: 0% in 2 years under leadership (previously high-attrition environment)
 
-## 7. IoT & Research Prototypes
+## 8. IoT & Research Prototypes
 *Focus: Smart appliances, MATLAB, computer vision, rapid prototyping.*
 
 ### Smart Refrigerator System (IoT Product — Lucas TVS)
@@ -834,7 +834,7 @@ Bridging hardware, systems, and test teams:
 - Python tooling is the force multiplier for embedded development
 - Every evaluation board BSP investment returns value in future products
 
-## 8. Integrated Project Portfolio: Complete EV Ecosystem Implementation
+## 9. Integrated Project Portfolio: Complete EV Ecosystem Implementation
 *Focus: Production-grade motor control, battery management, charging systems, diagnostics, bootloader infrastructure, cryptographic security, real-time scheduling.*
 
 ### Portfolio Overview
@@ -1629,7 +1629,7 @@ Focus testing efforts:
 
 ---
 
-## 9. Deep Feature Analysis: All 23 Modules
+## 10. Deep Feature Analysis: All 23 Modules
 
 This section extracts **every feature** of each middleware module, including small functional capabilities often overlooked but critical for production systems.
 
@@ -2590,7 +2590,7 @@ At 250 kHz switching, the SR MOSFET firing window is measured in nanoseconds. So
 
 ---
 
-## 10. OBC & OFBC Deep Dive: Multi-ECU Charger Systems
+## 11. OBC & OFBC Deep Dive: Multi-ECU Charger Systems
 
 ### Overview: Complete AC-to-DC Charger Architecture
 
@@ -2992,3 +2992,293 @@ This portfolio demonstrates **complete embedded systems mastery**:
 | **Integration** | 6 ECUs, 23 Modules, Multi-MCU | Scalable, modular, production-proven |
 
 Each layer built on the previous, creating a **cohesive, production-grade automotive ecosystem**.
+
+---
+
+## 15. Career Timeline & Professional Journey
+
+### Work History
+
+| Period | Role | Company | Location |
+|--------|------|---------|----------|
+| April 2022 — Present | **Technical Lead** | FORVIA HELLA eMobionics Pvt Ltd | Pune, Maharashtra |
+| July 2021 — April 2022 | **Technical Specialist** | Elektrobit India Pvt Ltd | Bangalore, Karnataka |
+| April 2018 — June 2021 | **Software Development Engineer** | Lucas TVS Ltd | Chennai, Tamil Nadu |
+| September 2016 — March 2018 | **Engineer** | ELGI Ultra Industries Ltd | Coimbatore, Tamil Nadu |
+| June 2014 — August 2016 | **FPGA and Embedded Programmer** | Crisp System India Pvt Ltd | Coimbatore, Tamil Nadu |
+
+---
+
+### Company Narratives
+
+**FORVIA HELLA eMobionics Pvt Ltd** *(April 2022 — Present)*
+- Technical Lead for 2W/3W EV embedded software products
+- Architected and delivered the reusable BSW middleware platform
+- Led Motor Controller (L1 & L2), BMS, OBC, OFBC product deliveries
+- Built and scaled the embedded software team from 2 to 8 engineers
+- Drove ASPICE-aligned development processes and ISO 26262 ASIL-C compliance
+- Interfaced with OEM customers (Hero Electric, TATA, TVS, Santhos) for technical alignment
+
+**Elektrobit India Pvt Ltd** *(July 2021 — April 2022)*
+- AUTOSAR BSW integration and configuration specialist
+- ComStack, DiagStack, MemStack, ComplexDriver integration
+- MCAL migration for automotive ECU projects targeting Renesas and other MCUs
+- Gained deep AUTOSAR architecture knowledge applied to in-house middleware design
+
+**Lucas TVS Ltd** *(April 2018 — June 2021)*
+- Motor controller development (STM32, BLDC, FOC discovery)
+- IoT product development (Smart Refrigerator with OTA)
+- Microcontroller peripheral drivers, bootloader development
+- Shifted from analog/triac control to software-centric motor control paradigm
+
+**ELGI Ultra Industries Ltd** *(September 2016 — March 2018)*
+- Embedded product development for home appliance motor control
+- AC universal motor face-angle control, encoder-based speed regulation
+- PID loop implementation and VFD (Variable Frequency Drive) integration
+- Professional-grade reliability and load-adaptive control strategies
+
+**Crisp System India Pvt Ltd** *(June 2014 — August 2016)*
+- FPGA development (Xilinx Spartan 3E) and embedded programming
+- Servo, DC, and multi-phase motor control for robotics applications
+- Hardware-software co-design foundation
+- Diverse motor types: servo, micro-servo, high-speed, 3-phase
+
+---
+
+## 16. Education & Certifications
+
+### Academic Qualifications
+
+**B.E. — Electronics & Communication Engineering**
+- Institution: Maharaja Engineering College, Avinashi
+- Result: First Class — 72%
+- Year: 2014
+
+**Diploma — Electronics & Communication Engineering**
+- Institution: Ruthraveni Muthuswamy Polytechnic College
+- Result: First Class — 89%
+- Year: 2011
+
+---
+
+### Professional Training & Certifications
+
+| Issuer | Course / Certification |
+|--------|------------------------|
+| **TÜV SÜD** | Functional Safety Engineer — ISO 26262 *(Certified)* |
+| **C-DAC** | Embedded System and Design |
+| **pManifold** | EV Systems and Modeling |
+| **NPTEL** | Fundamentals of Electric Vehicles |
+| **TI Online** | Teaching Old Motors New Tricks (C2000 & Motor Control) |
+| **Udemy** | RTOS, Bootloader Development, BMS Design, Clean Code, CI/CD |
+
+---
+
+## 17. Technical Skills & Competency Stack
+
+### Microcontrollers & Hardware Platforms
+
+**Production/Professional:**
+- Renesas RH850 F1KM (Automotive-grade, ASIL-C)
+- Renesas RL78
+- Infineon XMC1400 (Cortex-M0, Motor Control)
+- STM32 (ARM Cortex-M0+, M3)
+- dsPIC33EV (Microchip DSP MCU)
+- TI C2000 (DSP + CLB for power conversion)
+
+**Research/Prototyping:**
+- PIC 16F / 18F
+- ARM7 LPC2148
+- Xilinx Spartan 3E (FPGA)
+- Arduino (various)
+- Raspberry Pi
+
+---
+
+### Programming Languages
+
+| Language | Proficiency | Primary Use |
+|----------|-------------|-------------|
+| **Embedded C** | Expert | Production firmware |
+| **C++** | Proficient | OOP patterns, tooling |
+| **Python** | Proficient | UDS tools, calibration GUIs, automation |
+| Assembly | Working | Startup code, optimization |
+| HDL (VHDL/Verilog) | Working | FPGA design (Crisp era) |
+| MATLAB | Working | Simulation, algorithm prototyping |
+| Shell Script / Makefile | Working | Build systems, CI/CD |
+| XML / YAML / JSON | Working | Configuration, CI pipeline |
+| Markdown | Daily | Documentation |
+
+---
+
+### Communication Protocols
+
+**Automotive / Embedded:**
+- CAN / CAN-FD (ISO 11898)
+- J1939 (SAE)
+- UDS — ISO 14229 (Diagnostic)
+- ISO-TP — ISO 15765 (Transport)
+- OBD-2
+
+**Peripheral:**
+- SPI, I2C / SMBus
+- UART / USART
+- Modbus
+- 1-Wire
+
+---
+
+### Architecture & Standards
+
+- AUTOSAR (BSW concepts, integration experience at Elektrobit)
+- ISO 26262 — Functional Safety (TÜV SÜD certified)
+- ASPICE — Automotive SPICE
+- V-Model SDLC
+- SOLID Principles
+- Design Patterns (Strategy, Observer, State Machine, Singleton, Factory)
+- PlantUML (architecture documentation)
+- ANSYS SCADE (model-based development awareness)
+
+---
+
+### Testing & Quality
+
+| Tool / Practice | Usage |
+|----------------|-------|
+| MISRA-C:2012 | Coding standard, enforced via static analysis |
+| Unity / Ceedling | Unit testing framework for embedded C |
+| CMock | Hardware mock generation for unit tests |
+| Robot Framework | System-level test automation |
+| Helix QAC | MISRA static analysis (automotive grade) |
+| PC-lint | Secondary static analysis |
+| Code Coverage | Branch/decision coverage reporting |
+| Cyclomatic Complexity | Enforced per-function limits |
+| Static Stack Analysis | Prevent overflow in ASIL paths |
+
+---
+
+### DevOps & Tooling
+
+- Git (branching strategies, sub-module management)
+- GitLab CI/CD (automated build, test, static analysis pipelines)
+- Docker (containerized build environments)
+- Travis-CI
+- Doxygen (automated API documentation)
+- Jira (agile project management)
+- IBM DOORS (requirements management)
+- SVN (legacy)
+- Qt Designer (Python GUI for calibration and UDS tools)
+- GitHub Copilot (AI-assisted development)
+
+---
+
+### Debug & Simulation
+
+- Lauterbach TRACE32 (multi-core debugging)
+- iSystem winIDEA
+- GDB / OpenOCD
+- Renesas E1 / E20 debugger
+- LTspice (circuit simulation)
+- Proteus (embedded simulation)
+- Oscilloscope & Logic Analyzer (hardware debugging)
+
+---
+
+## 18. Architecture Principles (Design Philosophy)
+
+These 8 principles guide every architectural decision in Gokul's projects:
+
+### Principle 01: Layered Isolation
+Strict separation between Application, Services/Middleware, Drivers, and Hardware layers.
+- Changes in one layer must not cascade through the system
+- Clear API contracts between layers
+- Layer-to-layer communication only through defined interfaces
+- Impact: Bug fixes in BSP don't require application retesting
+
+### Principle 02: Platform Portability
+Abstract all hardware dependencies behind clean interfaces.
+- Migrate to a new MCU by replacing only the MCAL/BSP layer
+- Application and middleware layers are hardware-agnostic C code
+- Dual target strategy: All code runs on PC host AND MCU target
+- Impact: RH850 → XMC1 migration with zero middleware changes
+
+### Principle 03: Git Sub-Module Strategy
+Each reusable module lives in its own repository.
+- Products compose modules via Git sub-modules
+- Module updates propagate to all products via sub-module pull
+- Independent versioning per module
+- Module bugs fixed once, all products benefit
+- Impact: 23 modules across 6 products — zero code duplication
+
+### Principle 04: Dual Target Strategy
+Middleware and application software developed and tested on both PC and MCU simultaneously.
+- PC target: Fast development, unit testing with mocks
+- MCU target: Hardware validation with real peripherals
+- No hardware dependency in business logic
+- Impact: 60% faster ECU bring-up; testing before silicon arrives
+
+### Principle 05: OOP in C — Emulated
+Object-oriented patterns emulated in C enable scalability and testability.
+- Structs as objects, function pointers as polymorphism
+- Multiple instances: Each module instantiated independently
+- Encapsulation: Private state hidden behind API
+- Impact: PID controller, LLC controller, CAN-TP — all multi-instance
+
+### Principle 06: Design First & Domain-Driven
+All changes documented before implementation.
+- Software structure, naming, and team organization mirror the domain
+- Domain language used in code (not generic "handler" or "manager")
+- Docs always current because they're written first
+- Impact: New team members productive within weeks, not months
+
+### Principle 07: Test-Driven Development (TDD)
+Tests written before code — Red, Green, Refactor.
+- Catches defects early when cost of fix is lowest
+- Enables fearless refactoring
+- Test coverage is a first-class deliverable
+- Every module has a test suite before merging
+- Impact: 80% of bugs caught before integration testing
+
+### Principle 08: Quality Gates
+Every module must pass all gates before release:
+1. MISRA-C:2012 static analysis (zero violations)
+2. Unit tests passing with coverage targets met
+3. Code review sign-off
+4. Documentation up to date
+5. CI/CD pipeline green
+- Impact: <0.1% field failure rate (vs. 1-2% industry average)
+
+---
+
+## 19. Technical Articles & Thought Leadership
+
+Published on LinkedIn. All articles demonstrate Gokul's philosophy of sharing domain knowledge publicly.
+
+### Article 01: Unlocking the Power of OOP in C for Embedded Systems
+- **Theme**: Object-oriented design patterns (encapsulation, polymorphism, multiple instances) implemented in pure C
+- **Key insight**: OOP is a mindset, not a language feature. C can achieve the same benefits with discipline.
+- **Application**: All 23 middleware modules follow these patterns
+
+### Article 02: Revolutionizing Unit Testing for Embedded DSP Applications
+- **Theme**: Strategic approach to applying TDD to DSP code — digital filters, IIR, control systems
+- **Key insight**: DSP functions have deterministic outputs for known inputs — ideal for unit testing
+- **Application**: All control algorithm modules (PID, LLC, PFC) have unit test suites
+
+### Article 03: Balancing the Triad: Diversifying Your Embedded Development Team
+- **Theme**: Balancing software architecture, development processes, and team skills
+- **Key insight**: Technical excellence without process rigor fails at scale; process without technical depth creates mediocrity
+- **Application**: Team-building approach at FORVIA HELLA
+
+### Article 04: Unit Testing — Developer's Friend for Refactoring Code
+- **Theme**: Using unit tests as a safety net when refactoring embedded legacy codebases
+- **Key insight**: Refactoring without tests is guessing. Tests make refactoring a confident activity.
+- **Application**: Monolith-to-modular migration strategy
+
+### Article 05: From Skeptic to Advocate — My Journey with Unit Testing in Embedded
+- **Theme**: Personal transformation from "unit testing is overhead" to "unit testing is the foundation"
+- **Key insight**: The cost of not testing is always greater than the cost of testing
+- **Application**: Drove TDD adoption across the entire embedded team
+
+---
+
+*Last Synced: 2026-06-30 — Content sourced from portfolio website (index.html, main.js) and experience deep-dive interviews.*
