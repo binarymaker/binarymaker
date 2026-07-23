@@ -232,12 +232,12 @@
           <h3>Battery Management System</h3>
           <p class="card-subtitle">BMS — NMC &amp; LFP Chemistry</p>
           <ul class="card-features">
-            <li>SOC &amp; SOH estimation</li>
+            <li>SOC, SOH &amp; SOP estimation</li>
             <li>Cell balancing algorithms</li>
             <li>Thermal management</li>
+            <li>Pre-charge &amp; contactor control</li>
+            <li>HVIL monitoring</li>
             <li>Fault detection &amp; diagnostics</li>
-            <li>Distance-to-empty estimation</li>
-            <li>BMS ASIC driver integration</li>
           </ul>
           <div class="card-tag">Safety Critical</div>
         </div>
@@ -319,8 +319,10 @@
                 <div class="sublayer-heading svc">BMS</div>
                 <div class="layer-modules">
                   <span class="module proj">Coulomb Counting</span>
-                  <span class="module proj">SOC / SOH</span>
-                  <span class="module proj">Distance-to-Empty</span>
+                  <span class="module proj">SOC / SOH / SOP</span>
+                  <span class="module proj">Pre-charge SM</span>
+                  <span class="module proj">Contactor Control</span>
+                  <span class="module proj">HVIL Monitor</span>
                   <span class="module proj">Temp Monitoring</span>
                   <span class="module proj">Diagnostics</span>
                 </div>
@@ -373,6 +375,7 @@
               <span class="module svc">Safety Monitor</span>
               <span class="module svc">CRC</span>
               <span class="module svc">Crypto AES</span>
+              <span class="module svc">SecOC</span>
             </div>
           </div>
         </div>
@@ -545,17 +548,18 @@
           <div class="project-deliverables">
             <h4>Key Deliverables</h4>
             <div class="deliverable-grid">
-              <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>Hybrid SOC: Coulomb counting + OCV self-calibration (±2% accuracy)</span></div>
+              <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>SOC / SOH / SOP: Coulomb counting, OCV calibration, cycle-life &amp; power-limit estimation (±2%)</span></div>
               <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>TI AFIC driver — individual cell voltage within ±10mV</span></div>
               <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>Passive cell balancing with HST driver control (&gt;95% equalization)</span></div>
               <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>6-layer protection: OV / UV / OC / SC / OT / UT</span></div>
+              <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>Pre-charge state machine, contactor control &amp; HVIL monitoring for HV safety</span></div>
               <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>BMS-to-Charger isolated CAN: adaptive CC/CV charging protocol</span></div>
               <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>SEEK chemistry layer: LFP, NCA, NCM — zero firmware changes</span></div>
             </div>
           </div>
           <div class="project-impact">
             <span class="impact-label">Impact:</span>
-            ±2% SOC. 50+ configs on one firmware. AIS156 compliant. 30% faster charging via adaptive BMS-charger dialogue.
+            ±2% SOC. SOH cycle-life &amp; SOP power limits computed. 50+ configs on one firmware. AIS156 compliant. 30% faster charging via adaptive BMS-charger dialogue.
           </div>
         </div>
 
@@ -599,6 +603,8 @@
             <li>UDS Client</li>
             <li>BLE / Telematics</li>
             <li>Gateway</li>
+            <li>SecOC</li>
+            <li>ISO/SAE 21434</li>
           </ul>
         </div>
 
@@ -620,7 +626,7 @@
             Write once, deploy everywhere via Git sub-modules. 50–60% of each new ECU project is "buy, not build."
           </p>
           <div class="project-deliverables">
-            <h4>Key Deliverables (23 Modules)</h4>
+            <h4>Key Deliverables (24 Modules)</h4>
             <div class="deliverable-grid">
               <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>OS — Scheduler, HSM framework, timers, event queues</span></div>
               <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>CAN TP Stack + DBC-to-config auto-generator tool</span></div>
@@ -631,6 +637,7 @@
               <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>DSP Library — Digital filters (IIR/FIR), hysteresis, calculus</span></div>
               <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>Fail-safe Dual-Bootloader + Python UDS updater tool</span></div>
               <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>AES-256 (FIPS-197) cryptographic module</span></div>
+              <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>SecOC — CAN message authentication (ISO/SAE 21434 aligned)</span></div>
               <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>IO Abstraction — Digital &amp; Analog with configurable filtering</span></div>
               <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>CI/CD — MISRA, unit tests, coverage &gt;90%, Doxygen</span></div>
               <div class="deliverable"><span class="deliverable-icon">&#9881;</span><span>Git sub-module organisation for rapid multi-product deployment</span></div>
@@ -882,8 +889,8 @@
           <h3><span class="cat-icon">&#x1F3D7;</span> Architecture &amp; Standards</h3>
           <div class="skill-tags">
             <span class="primary">AUTOSAR</span><span class="primary">ISO 26262</span>
-            <span class="primary">ASPICE</span><span>V-Model SDLC</span>
-            <span>SOLID Principles</span><span>Design Patterns</span><span>PlantUML</span><span>ANSYS SCADE</span>
+            <span class="primary">ASPICE</span><span class="primary">RTOS</span><span>V-Model SDLC</span>
+            <span>ISO/SAE 21434</span><span>SOLID Principles</span><span>Design Patterns</span><span>PlantUML</span><span>ANSYS SCADE</span>
           </div>
         </div>
         <div class="skill-category">
@@ -908,6 +915,14 @@
           <div class="skill-tags">
             <span>Lauterbach TRACE32</span><span>iSystem winIDEA</span><span>GDB / OpenOCD</span>
             <span>Renesas E1/E20</span><span>LT Spice</span><span>Proteus</span><span>Oscilloscope</span><span>Logic Analyzer</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <h3><span class="cat-icon">&#x1F916;</span> AI &amp; Data Analytics</h3>
+          <div class="skill-tags">
+            <span class="primary">GitHub Copilot</span><span>Python Data Analysis</span>
+            <span>MATLAB / Simulink</span><span>AI-Assisted Calibration</span>
+            <span>Fault Pattern Detection</span>
           </div>
         </div>
       </div>
